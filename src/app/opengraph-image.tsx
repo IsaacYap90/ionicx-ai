@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "IonicX AI — AI Solutions for Singapore SMEs";
+export const alt = "IonicX AI — Personal AI Agents for SMEs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -46,7 +46,7 @@ export default async function Image() {
             </span>
           </div>
           <p style={{ fontSize: 32, color: "#e0e0e0", margin: "20px 0 10px 0" }}>
-            AI-Powered Solutions for Singapore SMEs
+            Personal AI Agents for SMEs
           </p>
           <p style={{ fontSize: 26, color: "#00ff88", margin: "10px 0" }}>
             🤖 Websites • Chatbots • Automation

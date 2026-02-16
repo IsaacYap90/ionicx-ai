@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IonicX AI — AI Solutions Singapore | AI Website Development & Automation",
+  title: "IonicX AI — Personal AI Agents for SMEs | Singapore",
   description:
-    "IonicX AI — Leading AI solutions company in Singapore. AI-powered websites, chatbots, and automation for SMEs. Qualify for 400% EIS tax deduction on AI investments. Custom AI website development.",
+    "IonicX AI — Personal AI Agents for Singapore SMEs. AI-powered websites, chatbots, and automation. Qualify for 400% EIS tax deduction on AI investments.",
   keywords: ["ai solutions singapore", "ai website development singapore", "ionicx ai", "AI chatbot singapore", "AI automation singapore", "SME AI solutions", "EIS tax deduction AI", "website development singapore"],
   metadataBase: new URL("https://ionicx.ai"),
   alternates: {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "IonicX AI — AI Solutions Singapore | AI Website Development",
-    description: "Leading AI solutions company in Singapore. AI-powered websites, chatbots, and automation for SMEs. 400% EIS tax deduction eligible.",
+    title: "IonicX AI — Personal AI Agents for SMEs | AI Website Development",
+    description: "Personal AI Agents for Singapore SMEs. AI-powered websites, chatbots, and automation. 400% EIS tax deduction eligible.",
     url: "https://ionicx.ai",
     siteName: "IonicX AI",
     type: "website",
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IonicX AI — AI Solutions Singapore",
-    description: "AI-powered websites, chatbots, and automation for Singapore SMEs. 400% EIS tax deduction eligible.",
+    title: "IonicX AI — Personal AI Agents for SMEs",
+    description: "Personal AI Agents for Singapore SMEs. Websites, chatbots, automation. 400% EIS tax deduction eligible.",
   },
 };
 
