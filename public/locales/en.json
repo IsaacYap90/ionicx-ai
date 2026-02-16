@@ -6,9 +6,9 @@
   "nav.getStarted": "Get Started",
 
   "hero.badge": "🏛️ Qualifies for SG Budget 2026 EIS",
-  "hero.titlePrefix": "Your AI",
-  "hero.titleHighlight": "Operations Manager",
-  "hero.desc": "One AI agent that runs your scheduling, clients, and ops — all from WhatsApp.",
+  "hero.titlePrefix": "Personal AI",
+  "hero.titleHighlight": "Agents for SMEs",
+  "hero.desc": "Your own AI employee that handles your website, answers customers 24/7, manages bookings, and never takes leave.",
   "hero.eisHighlight": "400% EIS tax deduction",
   "hero.eisSuffix": " eligible.",
   "hero.cta": "Get Your Free AI Consultation →",
@@ -23,7 +23,7 @@
 
   "solutions.title": "Our",
   "solutions.titleHighlight": "Solutions",
-  "solutions.desc": "End-to-end AI solutions built for Singapore SMEs",
+  "solutions.desc": "Personal AI Agents built for Singapore SMEs",
   "solutions.0.title": "AI Personal Operations Manager",
   "solutions.0.desc": "Your own AI agent on WhatsApp/Telegram. Manage scheduling, clients, and daily ops with natural language — powered by a real-time database. The brain of your business.",
   "solutions.1.title": "AI-Powered Websites",

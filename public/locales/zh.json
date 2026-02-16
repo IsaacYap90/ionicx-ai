@@ -6,9 +6,9 @@
   "nav.getStarted": "立即开始",
 
   "hero.badge": "🏛️ 符合新加坡2026财政预算案 EIS 资格",
-  "hero.titlePrefix": "您的 AI",
-  "hero.titleHighlight": "智能运营管家",
-  "hero.desc": "一个 AI 智能助手，通过 WhatsApp 为您管理排程、客户和日常运营。",
+  "hero.titlePrefix": "专属 AI",
+  "hero.titleHighlight": "智能代理人",
+  "hero.desc": "为您的企业打造专属 AI 员工 — 管理网站、24/7 回复客户、处理预约，全年无休。",
   "hero.eisHighlight": "400% EIS 税务扣除",
   "hero.eisSuffix": "资格。",
   "hero.cta": "预约免费 AI 咨询 →",
@@ -23,7 +23,7 @@
 
   "solutions.title": "我们的",
   "solutions.titleHighlight": "AI 智能解决方案",
-  "solutions.desc": "为新加坡中小企业量身打造的端到端 AI 解决方案",
+  "solutions.desc": "为新加坡中小企业打造的专属 AI 智能代理人",
   "solutions.0.title": "AI 智能运营管家",
   "solutions.0.desc": "您专属的 WhatsApp/Telegram AI 助手。以自然语言管理排程、客户和日常运营 — 由实时数据库驱动，是您企业的智慧大脑。",
   "solutions.1.title": "AI 智能网站",

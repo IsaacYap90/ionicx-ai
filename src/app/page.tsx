@@ -500,7 +500,7 @@ function Contact() {
             </button>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--text-dim)]">
               <a
-                href="https://wa.me/6581234567"
+                href="https://wa.me/6580268821"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#00ff88] transition-colors"
