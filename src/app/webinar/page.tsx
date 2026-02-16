@@ -322,6 +322,7 @@ export default function WebinarPage() {
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {[
             { quote: "Went from Instagram-only to a professional booking site with AI chatbot in 2 weeks. Isaac delivered exactly what he promised — fast and no fuss.", name: "Fabian", biz: "Registered Massage Therapist" },
+            { quote: "Isaac built my tattoo portfolio site with an online booking system. Clean design, fast turnaround, and it looks exactly how I wanted it.", name: "Lydia", biz: "Tattoo Artist — @tattbyds" },
           ].map((t, i) => (
             <div key={i} className="glass rounded-2xl p-6">
               <p className="text-[#e0e0e0] text-sm italic leading-relaxed mb-4">&ldquo;{t.quote}&rdquo;</p>
