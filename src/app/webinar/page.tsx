@@ -298,8 +298,8 @@ export default function WebinarPage() {
           Meet Your Host
         </h2>
         <div className="glass rounded-2xl p-6 md:p-10 max-w-3xl mx-auto md:flex gap-8 items-center">
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-[#00d4ff] to-[#00ff88] flex-shrink-0 mx-auto md:mx-0 mb-6 md:mb-0 flex items-center justify-center text-5xl">
-            🥊
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full flex-shrink-0 mx-auto md:mx-0 mb-6 md:mb-0 overflow-hidden border-2 border-[#00d4ff]">
+            <img src="/images/isaac-host.webp" alt="Isaac Yap — Founder, IonicX AI" className="w-full h-full object-cover object-top" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-[#00d4ff] font-[Space_Grotesk]">Isaac Yap</h3>
