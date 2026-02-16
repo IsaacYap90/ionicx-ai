@@ -109,8 +109,8 @@ function Hero() {
           transition={{ delay: 0.3 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
         >
-          AI Solutions That{" "}
-          <span className="text-[#00d4ff] text-glow-cyan">Pay For Themselves</span>
+          Your AI{" "}
+          <span className="text-[#00d4ff] text-glow-cyan">Operations Manager</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -118,9 +118,8 @@ function Hero() {
           transition={{ delay: 0.5 }}
           className="text-lg md:text-xl text-[var(--text-dim)] max-w-2xl mx-auto mb-10"
         >
-          Singapore SMEs get{" "}
-          <span className="text-[#00ff88] font-semibold">400% tax deduction</span> on AI
-          investments. We build the AI — you keep the savings.
+          One AI agent that runs your scheduling, clients, and ops — all from WhatsApp.{" "}
+          <span className="text-[#00ff88] font-semibold">400% EIS tax deduction</span> eligible.
         </motion.p>
         <motion.a
           href="#contact"
@@ -191,6 +190,12 @@ function Calculator() {
 /* ─── Solutions ─── */
 const solutions = [
   {
+    icon: "🧠",
+    title: "AI Personal Operations Manager",
+    desc: "Your own AI agent on WhatsApp/Telegram. Manage scheduling, clients, and daily ops with natural language — powered by a real-time database. The brain of your business.",
+    featured: true,
+  },
+  {
     icon: "🌐",
     title: "AI-Powered Websites",
     desc: "Smart ordering, booking, e-commerce with built-in AI chatbot that converts visitors to customers.",
@@ -230,7 +235,7 @@ function Solutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass rounded-2xl p-8 hover:border-[#00d4ff]/30 transition-colors group"
+              className={`glass rounded-2xl p-8 hover:border-[#00d4ff]/30 transition-colors group ${(s as any).featured ? "md:col-span-2 border-[#00d4ff]/40 glow-cyan" : ""}`}
             >
               <div className="text-4xl mb-4">{s.icon}</div>
               <h3 className="text-xl font-bold mb-3 group-hover:text-[#00d4ff] transition-colors">
