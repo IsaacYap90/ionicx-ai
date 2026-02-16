@@ -8,7 +8,7 @@ interface Message {
 }
 
 const GREETING =
-  "Hey! 👋 I'm IonicX AI's assistant. What kind of business do you run? I'll show you how AI can help — and this chatbot you're using right now? We build exactly this for SMEs.";
+  "Hey! 👋 I'm Robin, your AI agent. What kind of business do you run? I'll show you how AI can help — and this chatbot you're using right now? We build exactly this for SMEs.";
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -116,7 +116,7 @@ export default function ChatWidget() {
             }}
           >
             <span style={{ color: "#00d4ff", fontWeight: 700, fontSize: 15 }}>
-              🤖 IonicX AI Assistant
+              🤖 Robin — AI Agent
             </span>
             <button
               onClick={() => setOpen(false)}
