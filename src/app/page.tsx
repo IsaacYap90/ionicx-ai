@@ -535,6 +535,11 @@ function Footer() {
           {t("footer.copyright")}
         </div>
       </div>
+      <div className="max-w-6xl mx-auto flex justify-center gap-6 mt-6 text-xs text-[var(--text-dim)]">
+        <a href="/privacy" className="hover:text-[#00d4ff] transition-colors">Privacy Policy</a>
+        <span>•</span>
+        <a href="/terms" className="hover:text-[#00d4ff] transition-colors">Terms of Service</a>
+      </div>
     </footer>
   );
 }
