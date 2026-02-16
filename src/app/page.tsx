@@ -264,21 +264,21 @@ function Solutions() {
 /* ─── Pricing ─── */
 const plans = [
   {
-    price: 1888,
-    maintenance: 588,
+    price: 2888,
+    maintenance: 888,
     features: ["AI-Powered Website", "AI Chatbot Integration", "Mobile Responsive", "Hosting & SSL", "SEO Optimisation", "Email Support"],
     popular: false,
   },
   {
-    price: 3888,
-    maintenance: 888,
+    price: 5888,
+    maintenance: 1288,
     features: ["Everything in Starter", "CRM Integration", "AI Analytics Dashboard", "AI-Powered Features", "Priority Support", "Priority Delivery"],
     popular: true,
   },
   {
-    price: 8888,
+    price: 12888,
     suffix: "+",
-    maintenance: 1288,
+    maintenance: 1888,
     features: ["Everything in Growth", "Full AI Suite", "Custom Integrations", "API Integrations", "Dedicated Support", "Dedicated Account Manager"],
     popular: false,
   },
