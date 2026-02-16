@@ -44,10 +44,29 @@ function SeatsBadge() {
   );
 }
 
+/* ───────── get next Fridays ───────── */
+function getNextFridays(count: number): Date[] {
+  const dates: Date[] = [];
+  const now = new Date();
+  const d = new Date(now);
+  // Find next Friday
+  d.setDate(d.getDate() + ((5 - d.getDay() + 7) % 7 || 7));
+  d.setHours(21, 0, 0, 0); // 9pm SGT
+  for (let i = 0; i < count; i++) {
+    dates.push(new Date(d));
+    d.setDate(d.getDate() + 7);
+  }
+  return dates;
+}
+
+function formatFriday(d: Date): string {
+  return d.toLocaleDateString("en-SG", { weekday: "short", day: "numeric", month: "short", year: "numeric" }) + " — 9:00 PM SGT";
+}
+
 /* ───────── countdown ───────── */
 function Countdown() {
-  // Placeholder: next webinar date — change this
-  const target = new Date("2026-03-15T14:00:00+08:00").getTime();
+  const nextFriday = getNextFridays(1)[0];
+  const target = nextFriday.getTime();
   const [left, setLeft] = useState({ d: 0, h: 0, m: 0, s: 0 });
 
   useEffect(() => {
@@ -165,7 +184,8 @@ function FAQ() {
 
 /* ───────── Registration Form ───────── */
 function RegistrationForm() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", businessType: "", otherBusiness: "", whatsapp: true });
+  const fridays = getNextFridays(3);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", businessType: "", otherBusiness: "", sessionDate: "", whatsapp: true });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: FormEvent) => {
@@ -215,6 +235,13 @@ function RegistrationForm() {
       {form.businessType === "other" && (
         <input required placeholder="Please specify your business type" className={inputCls} value={form.otherBusiness} onChange={(e) => setForm({ ...form, otherBusiness: e.target.value })} />
       )}
+      <select required className={inputCls} value={form.sessionDate} onChange={(e) => setForm({ ...form, sessionDate: e.target.value })}>
+        <option value="" disabled>Select Session Date</option>
+        {fridays.map((f, i) => {
+          const spotsLeft = 50 - (i * 12);
+          return <option key={i} value={f.toISOString()}>{formatFriday(f)} — {spotsLeft > 0 ? `${spotsLeft} seats left` : "Almost full!"}</option>;
+        })}
+      </select>
       <label className="flex items-center gap-3 text-sm text-[#8892b0] cursor-pointer">
         <input type="checkbox" checked={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.checked })} className="w-4 h-4 accent-[#00ff88]" />
         Add me to the WhatsApp reminder group 💬
