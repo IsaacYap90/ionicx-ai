@@ -255,20 +255,23 @@ const plans = [
   {
     name: "Starter",
     price: 1888,
-    features: ["AI-Powered Website", "AI Chatbot Integration", "Mobile Responsive", "3 Months Support"],
+    maintenance: 588,
+    features: ["AI-Powered Website", "AI Chatbot Integration", "Mobile Responsive", "Hosting & SSL", "SEO Optimisation", "Email Support"],
     popular: false,
   },
   {
     name: "Growth",
     price: 3888,
-    features: ["Everything in Starter", "CRM Integration", "AI Analytics Dashboard", "6 Months Support", "Priority Delivery"],
+    maintenance: 888,
+    features: ["Everything in Starter", "CRM Integration", "AI Analytics Dashboard", "AI-Powered Features", "Priority Support", "Priority Delivery"],
     popular: true,
   },
   {
     name: "Enterprise",
     price: 8888,
     suffix: "+",
-    features: ["Everything in Growth", "Custom AI Solutions", "API Integrations", "12 Months Support", "Dedicated Account Manager"],
+    maintenance: 1288,
+    features: ["Everything in Growth", "Full AI Suite", "Custom Integrations", "API Integrations", "Dedicated Support", "Dedicated Account Manager"],
     popular: false,
   },
 ];
@@ -280,9 +283,14 @@ function Pricing() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Simple <span className="text-[#00d4ff]">Pricing</span>
         </h2>
-        <div className="text-center mb-12">
+        <div className="text-center mb-4">
           <span className="inline-block px-4 py-2 rounded-full glass text-sm text-[#00ff88]">
             ✅ All plans qualify for 400% EIS tax deduction
+          </span>
+        </div>
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-2 rounded-full glass text-sm text-[#00d4ff]">
+            🤖 AI-Powered by ChatGPT
           </span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -310,8 +318,14 @@ function Pricing() {
                   {fmt(p.price)}
                   {p.suffix || ""}
                 </div>
+                <div className="text-sm text-[var(--text-dim)] mb-1">
+                  + {fmt(p.maintenance)}/yr maintenance
+                </div>
+                <div className="text-xs text-[var(--text-dim)] mb-1 opacity-70">
+                  Includes AI, hosting, support &amp; SEO
+                </div>
                 <div className="text-sm text-[#00ff88] mb-6">
-                  After EIS: ~{fmt(effective)} effective cost
+                  After EIS: ~{fmt(effective)} effective build cost
                 </div>
                 <ul className="space-y-3 mb-8">
                   {p.features.map((f) => (
