@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
 
-const TELEGRAM_BOT_TOKEN = "8209782745:AAGgA0JGwbs9hA_7amnPu_xwLT2MswBQnvs";
-const TELEGRAM_CHAT_ID = "1729085064";
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_CRM_BOT_TOKEN || "";
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || "";
 
 export async function POST(req: NextRequest) {
   try {
