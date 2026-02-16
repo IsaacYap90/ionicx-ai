@@ -102,8 +102,8 @@ const translations: Record<string, { en: string; zh: string }> = {
   "faq.5.a": { en: "We use AI agents to build faster (2-3 weeks vs 2-3 months), at a fraction of the cost. Every site is custom, not a template. And everything qualifies for the EIS deduction.", zh: "我们使用AI代理更快地构建（2-3周 vs 2-3个月），成本仅为一小部分。每个网站都是定制的，不是模板。而且一切都符合EIS扣除资格。" },
 
   // Final CTA
-  "final.title": { en: "Don't Miss Out", zh: "不要错过" },
-  "final.subtitle": { en: "50 seats. One webinar. The EIS deduction window won't last forever.", zh: "50个名额。一场研讨会。EIS扣除优惠不会永远持续。" },
+  "final.title": { en: "Don't Leave Money on the Table", zh: "别把钱留在桌上" },
+  "final.subtitle": { en: "Every week you wait is revenue your competitors are already saving. The EIS 400% deduction window won't last forever — and neither will these seats.", zh: "你每多等一周，竞争对手就多省一周的钱。EIS 400%扣除优惠不会永远持续 — 名额也不会。" },
 
   // Error
   "error.generic": { en: "Something went wrong. Please try again.", zh: "出现错误，请重试。" },
@@ -309,7 +309,7 @@ function FAQ() {
 /* ───────── Registration Form ───────── */
 function RegistrationForm() {
   const { t } = useContext(LangCtx);
-  const fridays = getNextFridays(3);
+  const fridays = getNextFridays(2);
   const [form, setForm] = useState({ name: "", email: "", phone: "", businessType: "", otherBusiness: "", sessionDate: "", whatsapp: true });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -363,8 +363,9 @@ function RegistrationForm() {
       <select required className={inputCls} value={form.sessionDate} onChange={(e) => setForm({ ...form, sessionDate: e.target.value })}>
         <option value="" disabled>{t("reg.sessionDate")}</option>
         {fridays.map((f, i) => {
-          const spotsLeft = 50 - (i * 12);
-          return <option key={i} value={f.toISOString()}>{formatFriday(f)} — {spotsLeft > 0 ? `${spotsLeft} ${t("reg.seatsLeft")}` : t("reg.almostFull")}</option>;
+          const spotsLeft = i === 0 ? 5 : 28;
+          const urgency = i === 0 ? "🔥 " : "";
+          return <option key={i} value={f.toISOString()}>{formatFriday(f)} — {urgency}{spotsLeft} {t("reg.seatsLeft")}</option>;
         })}
       </select>
       <label className="flex items-center gap-3 text-sm text-[#8892b0] cursor-pointer">
