@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { LanguageProvider, useLanguage } from "@/context/LanguageContext";
 
 /* ─── helpers ─── */
 const fmt = (n: number) =>
@@ -32,14 +33,31 @@ function Section({
   );
 }
 
+/* ─── Language Toggle ─── */
+function LangToggle() {
+  const { lang, setLang } = useLanguage();
+  return (
+    <button
+      onClick={() => setLang(lang === "en" ? "zh" : "en")}
+      className="px-3 py-1.5 rounded-full glass text-xs font-semibold tracking-wide transition-colors hover:border-[#00d4ff]/50"
+      aria-label="Toggle language"
+    >
+      <span className={lang === "en" ? "text-[#00d4ff]" : "text-[var(--text-dim)]"}>EN</span>
+      <span className="text-[var(--text-dim)] mx-1">|</span>
+      <span className={lang === "zh" ? "text-[#00d4ff]" : "text-[var(--text-dim)]"}>中文</span>
+    </button>
+  );
+}
+
 /* ─── Navbar ─── */
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
   const links = [
-    ["Solutions", "#solutions"],
-    ["Pricing", "#pricing"],
-    ["About", "#about"],
-    ["Contact", "#contact"],
+    [t("nav.solutions"), "#solutions"],
+    [t("nav.pricing"), "#pricing"],
+    [t("nav.about"), "#about"],
+    [t("nav.contact"), "#contact"],
   ];
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[var(--card-border)]">
@@ -57,16 +75,20 @@ function Navbar() {
               {label}
             </a>
           ))}
+          <LangToggle />
           <a
             href="#contact"
             className="px-5 py-2 rounded-full bg-[#00ff88] text-[#0a0a1a] font-semibold text-sm hover:shadow-[0_0_20px_rgba(0,255,136,0.4)] transition-shadow"
           >
-            Get Started
+            {t("nav.getStarted")}
           </a>
         </div>
-        <button className="md:hidden text-[#00d4ff]" onClick={() => setOpen(!open)}>
-          {open ? "✕" : "☰"}
-        </button>
+        <div className="flex md:hidden items-center gap-3">
+          <LangToggle />
+          <button className="text-[#00d4ff]" onClick={() => setOpen(!open)}>
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
       {open && (
         <div className="md:hidden glass border-t border-[var(--card-border)] px-6 pb-4">
@@ -88,9 +110,9 @@ function Navbar() {
 
 /* ─── Hero ─── */
 function Hero() {
+  const { t } = useLanguage();
   return (
     <Section className="min-h-screen flex items-center justify-center pt-20 grid-bg">
-      {/* gradient orbs */}
       <div className="absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full bg-[#00d4ff] opacity-[0.04] blur-[120px]" />
       <div className="absolute bottom-20 right-1/4 w-[400px] h-[400px] rounded-full bg-[#6366F1] opacity-[0.06] blur-[120px]" />
 
@@ -101,7 +123,7 @@ function Hero() {
           transition={{ delay: 0.2 }}
           className="inline-block mb-6 px-4 py-2 rounded-full glass text-sm text-[#00d4ff]"
         >
-          🏛️ Qualifies for SG Budget 2026 EIS
+          {t("hero.badge")}
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -109,8 +131,8 @@ function Hero() {
           transition={{ delay: 0.3 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
         >
-          Your AI{" "}
-          <span className="text-[#00d4ff] text-glow-cyan">Operations Manager</span>
+          {t("hero.titlePrefix")}{" "}
+          <span className="text-[#00d4ff] text-glow-cyan">{t("hero.titleHighlight")}</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -118,8 +140,9 @@ function Hero() {
           transition={{ delay: 0.5 }}
           className="text-lg md:text-xl text-[var(--text-dim)] max-w-2xl mx-auto mb-10"
         >
-          One AI agent that runs your scheduling, clients, and ops — all from WhatsApp.{" "}
-          <span className="text-[#00ff88] font-semibold">400% EIS tax deduction</span> eligible.
+          {t("hero.desc")}{" "}
+          <span className="text-[#00ff88] font-semibold">{t("hero.eisHighlight")}</span>
+          {t("hero.eisSuffix")}
         </motion.p>
         <motion.a
           href="#contact"
@@ -128,7 +151,7 @@ function Hero() {
           transition={{ delay: 0.7 }}
           className="inline-block px-8 py-4 rounded-full bg-[#00ff88] text-[#0a0a1a] font-bold text-lg hover:shadow-[0_0_30px_rgba(0,255,136,0.4)] transition-all hover:scale-105"
         >
-          Get Your Free AI Consultation →
+          {t("hero.cta")}
         </motion.a>
       </div>
     </Section>
@@ -137,6 +160,7 @@ function Hero() {
 
 /* ─── EIS Calculator ─── */
 function Calculator() {
+  const { t } = useLanguage();
   const [investment, setInvestment] = useState(2888);
   const deduction = investment * 4;
   const savings = Math.round(deduction * 0.17);
@@ -146,14 +170,14 @@ function Calculator() {
     <Section id="calculator" className="py-24">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          EIS Tax <span className="text-[#00d4ff]">Calculator</span>
+          {t("calc.title")} <span className="text-[#00d4ff]">{t("calc.titleHighlight")}</span>
         </h2>
         <p className="text-center text-[var(--text-dim)] mb-12">
-          See how much you save with the 400% Enterprise Innovation Scheme
+          {t("calc.desc")}
         </p>
         <div className="glass rounded-2xl p-8 md:p-12 glow-cyan">
           <label className="block text-sm text-[var(--text-dim)] mb-2">
-            Your AI Investment
+            {t("calc.label")}
           </label>
           <div className="text-4xl font-bold text-[#00d4ff] text-glow-cyan mb-6">
             {fmt(investment)}
@@ -169,9 +193,9 @@ function Calculator() {
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              ["400% Deduction", fmt(deduction), "#00d4ff"],
-              ["Tax Savings (17%)", fmt(savings), "#00ff88"],
-              ["Effective Cost", fmt(effective), "#00ff88"],
+              [t("calc.deduction"), fmt(deduction), "#00d4ff"],
+              [t("calc.taxSavings"), fmt(savings), "#00ff88"],
+              [t("calc.effectiveCost"), fmt(effective), "#00ff88"],
             ].map(([label, value, color]) => (
               <div key={label} className="glass rounded-xl p-6 text-center">
                 <div className="text-sm text-[var(--text-dim)] mb-2">{label}</div>
@@ -188,60 +212,35 @@ function Calculator() {
 }
 
 /* ─── Solutions ─── */
-const solutions = [
-  {
-    icon: "🧠",
-    title: "AI Personal Operations Manager",
-    desc: "Your own AI agent on WhatsApp/Telegram. Manage scheduling, clients, and daily ops with natural language — powered by a real-time database. The brain of your business.",
-    featured: true,
-  },
-  {
-    icon: "🌐",
-    title: "AI-Powered Websites",
-    desc: "Smart ordering, booking, e-commerce with built-in AI chatbot that converts visitors to customers.",
-  },
-  {
-    icon: "🤖",
-    title: "AI Chatbots",
-    desc: "24/7 customer service, booking automation, FAQ handling — in English, Mandarin, Malay & more.",
-  },
-  {
-    icon: "📊",
-    title: "AI Analytics",
-    desc: "Real-time business intelligence dashboards that turn your data into actionable insights.",
-  },
-  {
-    icon: "⚡",
-    title: "AI Automation",
-    desc: "Workflow automation, content generation, multilingual translation — save hours every week.",
-  },
-];
+const solutionIcons = ["🧠", "🌐", "🤖", "📊", "⚡"];
+const solutionFeatured = [true, false, false, false, false];
 
 function Solutions() {
+  const { t } = useLanguage();
   return (
     <Section id="solutions" className="py-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Our <span className="text-[#00d4ff]">Solutions</span>
+          {t("solutions.title")} <span className="text-[#00d4ff]">{t("solutions.titleHighlight")}</span>
         </h2>
         <p className="text-center text-[var(--text-dim)] mb-12 max-w-xl mx-auto">
-          End-to-end AI solutions built for Singapore SMEs
+          {t("solutions.desc")}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {solutions.map((s, i) => (
+          {solutionIcons.map((icon, i) => (
             <motion.div
-              key={s.title}
+              key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`glass rounded-2xl p-8 hover:border-[#00d4ff]/30 transition-colors group ${(s as any).featured ? "md:col-span-2 border-[#00d4ff]/40 glow-cyan" : ""}`}
+              className={`glass rounded-2xl p-8 hover:border-[#00d4ff]/30 transition-colors group ${solutionFeatured[i] ? "md:col-span-2 border-[#00d4ff]/40 glow-cyan" : ""}`}
             >
-              <div className="text-4xl mb-4">{s.icon}</div>
+              <div className="text-4xl mb-4">{icon}</div>
               <h3 className="text-xl font-bold mb-3 group-hover:text-[#00d4ff] transition-colors">
-                {s.title}
+                {t(`solutions.${i}.title`)}
               </h3>
-              <p className="text-[var(--text-dim)]">{s.desc}</p>
+              <p className="text-[var(--text-dim)]">{t(`solutions.${i}.desc`)}</p>
             </motion.div>
           ))}
         </div>
@@ -253,21 +252,18 @@ function Solutions() {
 /* ─── Pricing ─── */
 const plans = [
   {
-    name: "Starter",
     price: 1888,
     maintenance: 588,
     features: ["AI-Powered Website", "AI Chatbot Integration", "Mobile Responsive", "Hosting & SSL", "SEO Optimisation", "Email Support"],
     popular: false,
   },
   {
-    name: "Growth",
     price: 3888,
     maintenance: 888,
     features: ["Everything in Starter", "CRM Integration", "AI Analytics Dashboard", "AI-Powered Features", "Priority Support", "Priority Delivery"],
     popular: true,
   },
   {
-    name: "Enterprise",
     price: 8888,
     suffix: "+",
     maintenance: 1288,
@@ -277,20 +273,21 @@ const plans = [
 ];
 
 function Pricing() {
+  const { t } = useLanguage();
   return (
     <Section id="pricing" className="py-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Simple <span className="text-[#00d4ff]">Pricing</span>
+          {t("pricing.title")} <span className="text-[#00d4ff]">{t("pricing.titleHighlight")}</span>
         </h2>
         <div className="text-center mb-4">
           <span className="inline-block px-4 py-2 rounded-full glass text-sm text-[#00ff88]">
-            ✅ All plans qualify for 400% EIS tax deduction
+            {t("pricing.eisBadge")}
           </span>
         </div>
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-2 rounded-full glass text-sm text-[#00d4ff]">
-            🤖 AI-Powered by ChatGPT
+            {t("pricing.aiBadge")}
           </span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -299,7 +296,7 @@ function Pricing() {
             const effective = p.price - savings;
             return (
               <motion.div
-                key={p.name}
+                key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -310,28 +307,28 @@ function Pricing() {
               >
                 {p.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#00d4ff] text-[#0a0a1a] text-xs font-bold">
-                    MOST POPULAR
+                    {t("pricing.popular")}
                   </div>
                 )}
-                <h3 className="text-xl font-bold mb-2">{p.name}</h3>
+                <h3 className="text-xl font-bold mb-2">{t(`pricing.plan.${i}.name`)}</h3>
                 <div className="text-3xl font-bold text-[#00d4ff] mb-1">
                   {fmt(p.price)}
                   {p.suffix || ""}
                 </div>
                 <div className="text-sm text-[var(--text-dim)] mb-1">
-                  + {fmt(p.maintenance)}/yr maintenance
+                  + {fmt(p.maintenance)}{t("pricing.maintenance")}
                 </div>
                 <div className="text-xs text-[var(--text-dim)] mb-1 opacity-70">
-                  Includes AI, hosting, support &amp; SEO
+                  {t("pricing.includes")}
                 </div>
                 <div className="text-sm text-[#00ff88] mb-6">
-                  After EIS: ~{fmt(effective)} effective build cost
+                  {t("pricing.afterEIS").replace("{amount}", fmt(effective))}
                 </div>
                 <ul className="space-y-3 mb-8">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-sm text-[var(--text-dim)]">
                       <span className="text-[#00ff88] mt-0.5">✓</span>
-                      {f}
+                      {t(`pricing.features.${f}`)}
                     </li>
                   ))}
                 </ul>
@@ -343,7 +340,7 @@ function Pricing() {
                       : "glass border border-[#00d4ff]/30 text-[#00d4ff] hover:bg-[#00d4ff]/10"
                   }`}
                 >
-                  Get Started
+                  {t("pricing.cta")}
                 </a>
               </motion.div>
             );
@@ -355,24 +352,20 @@ function Pricing() {
 }
 
 /* ─── How It Works ─── */
-const steps = [
-  { num: "01", title: "Free Consultation", desc: "Tell us about your business and goals" },
-  { num: "02", title: "AI Solution Design", desc: "We craft a tailored AI strategy for you" },
-  { num: "03", title: "Build & Deploy", desc: "We build, test, and launch your AI solution" },
-  { num: "04", title: "Claim EIS Deduction", desc: "We help you claim your 400% tax deduction" },
-];
+const stepNums = ["01", "02", "03", "04"];
 
 function HowItWorks() {
+  const { t } = useLanguage();
   return (
     <Section className="py-24">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          How It <span className="text-[#00d4ff]">Works</span>
+          {t("steps.title")} <span className="text-[#00d4ff]">{t("steps.titleHighlight")}</span>
         </h2>
         <div className="space-y-0">
-          {steps.map((s, i) => (
+          {stepNums.map((num, i) => (
             <motion.div
-              key={s.num}
+              key={num}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -381,15 +374,15 @@ function HowItWorks() {
             >
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 rounded-full bg-[#00d4ff]/10 border border-[#00d4ff]/40 flex items-center justify-center text-[#00d4ff] font-bold text-sm glow-cyan">
-                  {s.num}
+                  {num}
                 </div>
-                {i < steps.length - 1 && (
+                {i < stepNums.length - 1 && (
                   <div className="w-px h-16 bg-gradient-to-b from-[#00d4ff]/30 to-transparent" />
                 )}
               </div>
               <div className="pb-12">
-                <h3 className="text-lg font-bold mb-1">{s.title}</h3>
-                <p className="text-[var(--text-dim)] text-sm">{s.desc}</p>
+                <h3 className="text-lg font-bold mb-1">{t(`steps.${i}.title`)}</h3>
+                <p className="text-[var(--text-dim)] text-sm">{t(`steps.${i}.desc`)}</p>
               </div>
             </motion.div>
           ))}
@@ -400,27 +393,24 @@ function HowItWorks() {
 }
 
 /* ─── About ─── */
+const aboutIcons = ["🏢", "🇸🇬", "🤖"];
+
 function About() {
+  const { t } = useLanguage();
   return (
     <Section id="about" className="py-24">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          About <span className="text-[#00d4ff]">IonicX AI</span>
+          {t("about.title")} <span className="text-[#00d4ff]">{t("about.titleHighlight")}</span>
         </h2>
         <p className="text-[var(--text-dim)] text-lg mb-8 leading-relaxed">
-          We&apos;re a Singapore-based AI solutions company on a mission to make AI accessible
-          and affordable for every SME. Powered by cutting-edge AI agents and backed by
-          Singapore&apos;s national AI mission, we help businesses automate, grow, and save.
+          {t("about.desc")}
         </p>
         <div className="flex flex-wrap justify-center gap-6">
-          {[
-            ["🏢", "ACRA Registered"],
-            ["🇸🇬", "SG Budget 2026 Aligned"],
-            ["🤖", "AI-Native Company"],
-          ].map(([icon, label]) => (
-            <div key={label} className="glass rounded-xl px-6 py-4 flex items-center gap-3">
+          {aboutIcons.map((icon, i) => (
+            <div key={i} className="glass rounded-xl px-6 py-4 flex items-center gap-3">
               <span className="text-2xl">{icon}</span>
-              <span className="text-sm font-medium">{label}</span>
+              <span className="text-sm font-medium">{t(`about.badge.${i}`)}</span>
             </div>
           ))}
         </div>
@@ -431,23 +421,30 @@ function About() {
 
 /* ─── Contact ─── */
 function Contact() {
+  const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
+  const fields = [
+    [t("contact.label.name"), "name", "text", t("contact.placeholder.name")],
+    [t("contact.label.email"), "email", "email", t("contact.placeholder.email")],
+    [t("contact.label.phone"), "phone", "tel", t("contact.placeholder.phone")],
+    [t("contact.label.business"), "business", "text", t("contact.placeholder.business")],
+  ];
   return (
     <Section id="contact" className="py-24">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Book Your Free{" "}
-          <span className="text-[#00ff88] text-glow-green">AI Consultation</span>
+          {t("contact.title")}{" "}
+          <span className="text-[#00ff88] text-glow-green">{t("contact.titleHighlight")}</span>
         </h2>
         <p className="text-center text-[var(--text-dim)] mb-12">
-          Tell us about your business — we&apos;ll show you what AI can do for you.
+          {t("contact.desc")}
         </p>
         {submitted ? (
           <div className="glass rounded-2xl p-12 text-center glow-green">
             <div className="text-4xl mb-4">✅</div>
-            <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
+            <h3 className="text-2xl font-bold mb-2">{t("contact.thankYou")}</h3>
             <p className="text-[var(--text-dim)]">
-              We&apos;ll get back to you within 24 hours.
+              {t("contact.thankYouDesc")}
             </p>
           </div>
         ) : (
@@ -459,12 +456,7 @@ function Contact() {
             className="glass rounded-2xl p-8 md:p-12 glow-cyan space-y-6"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                ["Name", "name", "text", "Your name"],
-                ["Email", "email", "email", "you@company.com"],
-                ["Phone", "phone", "tel", "+65 XXXX XXXX"],
-                ["Business Type", "business", "text", "e.g. F&B, Retail, Services"],
-              ].map(([label, name, type, placeholder]) => (
+              {fields.map(([label, name, type, placeholder]) => (
                 <div key={name}>
                   <label className="block text-sm text-[var(--text-dim)] mb-2">
                     {label}
@@ -480,11 +472,11 @@ function Contact() {
               ))}
             </div>
             <div>
-              <label className="block text-sm text-[var(--text-dim)] mb-2">Message</label>
+              <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.message")}</label>
               <textarea
                 name="message"
                 rows={4}
-                placeholder="Tell us about your business and what you'd like to automate..."
+                placeholder={t("contact.placeholder.message")}
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:border-[#00d4ff]/50 focus:outline-none transition-colors resize-none"
               />
             </div>
@@ -492,7 +484,7 @@ function Contact() {
               type="submit"
               className="w-full py-4 rounded-full bg-[#00ff88] text-[#0a0a1a] font-bold text-lg hover:shadow-[0_0_30px_rgba(0,255,136,0.4)] transition-all hover:scale-[1.02]"
             >
-              Get Your Free AI Consultation →
+              {t("contact.submit")}
             </button>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--text-dim)]">
               <a
@@ -501,9 +493,9 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="hover:text-[#00ff88] transition-colors"
               >
-                💬 WhatsApp Us
+                {t("contact.whatsapp")}
               </a>
-              <span>📧 hello@ionicx.ai</span>
+              <span>{t("contact.email")}</span>
             </div>
           </form>
         )}
@@ -514,6 +506,7 @@ function Contact() {
 
 /* ─── Footer ─── */
 function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="border-t border-[var(--card-border)] px-6 py-12 mt-12">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
@@ -521,13 +514,13 @@ function Footer() {
           IonicX<span className="text-[#00d4ff]"> AI</span>
         </div>
         <div className="flex gap-6 text-sm text-[var(--text-dim)]">
-          <a href="#solutions" className="hover:text-[#00d4ff] transition-colors">Solutions</a>
-          <a href="#pricing" className="hover:text-[#00d4ff] transition-colors">Pricing</a>
-          <a href="#about" className="hover:text-[#00d4ff] transition-colors">About</a>
-          <a href="#contact" className="hover:text-[#00d4ff] transition-colors">Contact</a>
+          <a href="#solutions" className="hover:text-[#00d4ff] transition-colors">{t("footer.solutions")}</a>
+          <a href="#pricing" className="hover:text-[#00d4ff] transition-colors">{t("footer.pricing")}</a>
+          <a href="#about" className="hover:text-[#00d4ff] transition-colors">{t("footer.about")}</a>
+          <a href="#contact" className="hover:text-[#00d4ff] transition-colors">{t("footer.contact")}</a>
         </div>
         <div className="text-sm text-[var(--text-dim)]">
-          © 2026 IonicX AI | UEN: 53518824B
+          {t("footer.copyright")}
         </div>
       </div>
     </footer>
@@ -537,16 +530,18 @@ function Footer() {
 /* ─── Page ─── */
 export default function Home() {
   return (
-    <main className="overflow-hidden">
-      <Navbar />
-      <Hero />
-      <Calculator />
-      <Solutions />
-      <Pricing />
-      <HowItWorks />
-      <About />
-      <Contact />
-      <Footer />
-    </main>
+    <LanguageProvider>
+      <main className="overflow-hidden">
+        <Navbar />
+        <Hero />
+        <Calculator />
+        <Solutions />
+        <Pricing />
+        <HowItWorks />
+        <About />
+        <Contact />
+        <Footer />
+      </main>
+    </LanguageProvider>
   );
 }
