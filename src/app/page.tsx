@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { LanguageProvider, useLanguage } from "@/context/LanguageContext";
+import ChatWidget from "@/components/ChatWidget";
 
 /* ─── helpers ─── */
 const fmt = (n: number) =>
@@ -558,6 +559,7 @@ export default function Home() {
         <About />
         <Contact />
         <Footer />
+        <ChatWidget />
       </main>
     </LanguageProvider>
   );
