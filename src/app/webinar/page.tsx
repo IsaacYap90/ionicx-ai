@@ -165,7 +165,7 @@ function FAQ() {
 
 /* ───────── Registration Form ───────── */
 function RegistrationForm() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", businessType: "", whatsapp: true });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", businessType: "", otherBusiness: "", whatsapp: true });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: FormEvent) => {
@@ -212,9 +212,12 @@ function RegistrationForm() {
         <option value="services">Professional Services</option>
         <option value="other">Other</option>
       </select>
+      {form.businessType === "other" && (
+        <input required placeholder="Please specify your business type" className={inputCls} value={form.otherBusiness} onChange={(e) => setForm({ ...form, otherBusiness: e.target.value })} />
+      )}
       <label className="flex items-center gap-3 text-sm text-[#8892b0] cursor-pointer">
         <input type="checkbox" checked={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.checked })} className="w-4 h-4 accent-[#00ff88]" />
-        Add me to the WhatsApp reminder group
+        Add me to the WhatsApp reminder group 💬
       </label>
       <button
         type="submit"
