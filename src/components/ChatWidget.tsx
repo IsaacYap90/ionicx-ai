@@ -8,7 +8,7 @@ interface Message {
 }
 
 const GREETING =
-  "Hey! 👋 I'm Robin, your AI agent. What kind of business do you run? I'll show you how AI can help — and this chatbot you're using right now? We build exactly this for SMEs.";
+  "Hey! 👋 I'm Robin, IonicX AI's agent. What kind of business do you run? I'll show you how AI can help — and this chatbot you're using right now? We build exactly this for SMEs.";
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
