@@ -462,8 +462,17 @@ function Contact() {
           </div>
         ) : (
           <form
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
+              const fd = new FormData(e.currentTarget);
+              const data = Object.fromEntries(fd.entries());
+              try {
+                await fetch("/api/contact", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(data),
+                });
+              } catch {}
               setSubmitted(true);
             }}
             className="glass rounded-2xl p-8 md:p-12 glow-cyan space-y-6"
