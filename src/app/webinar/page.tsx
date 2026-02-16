@@ -135,7 +135,7 @@ const faqs = [
   { q: "Is this webinar really free?", a: "Yes, 100% free. No credit card needed. We'll share actionable strategies you can use immediately." },
   { q: "What is the EIS 400% tax deduction?", a: "Under Budget 2026, the Enterprise Innovation Scheme (EIS) allows businesses to claim a 400% tax deduction on qualifying AI and digital expenditure, up to S$50,000. This means a S$2,888 AI website effectively costs ~S$924 after tax savings." },
   { q: "Do I need technical knowledge?", a: "Not at all. Our webinar is designed for business owners, not developers. We'll explain everything in simple terms." },
-  { q: "Will there be a replay?", a: "A 48-hour replay link will be sent to registered attendees. But we highly recommend attending live for Q&A." },
+  { q: "Will there be a replay?", a: "No. This is a live-only session — there will be no replay link. If you want the insights and the exclusive webinar bonus, you need to show up live. We keep it exclusive so we can give our full attention to everyone in the room." },
   { q: "How is IonicX different from web agencies?", a: "We use AI agents to build faster (2-3 weeks vs 2-3 months), at a fraction of the cost. Every site is custom, not a template. And everything qualifies for the EIS deduction." },
 ];
 
