@@ -179,8 +179,20 @@ function Calculator() {
           <label className="block text-sm text-[var(--text-dim)] mb-2">
             {t("calc.label")}
           </label>
-          <div className="text-4xl font-bold text-[#00d4ff] text-glow-cyan mb-6">
-            {fmt(investment)}
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-[#00d4ff] text-2xl font-bold">S$</span>
+            <input
+              type="number"
+              min={1000}
+              max={50000}
+              step={100}
+              value={investment}
+              onChange={(e) => {
+                const v = Number(e.target.value);
+                if (v >= 0 && v <= 50000) setInvestment(v);
+              }}
+              className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-3xl font-bold text-[#00d4ff] w-full outline-none focus:border-[#00d4ff] transition-colors"
+            />
           </div>
           <input
             type="range"
