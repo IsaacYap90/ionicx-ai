@@ -513,7 +513,7 @@ function Footer() {
           <a href="#contact" className="hover:text-[#00d4ff] transition-colors">Contact</a>
         </div>
         <div className="text-sm text-[var(--text-dim)]">
-          © 2026 IonicX AI. ACRA Registered.
+          © 2026 IonicX AI | UEN: 53518824B
         </div>
       </div>
     </footer>
