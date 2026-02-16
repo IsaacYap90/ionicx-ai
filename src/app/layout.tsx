@@ -2,16 +2,30 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IonicX AI — AI Solutions That Pay For Themselves",
+  title: "IonicX AI — AI Solutions Singapore | AI Website Development & Automation",
   description:
-    "AI-powered websites, chatbots, and automation for Singapore SMEs. Qualify for 400% EIS tax deduction on AI investments.",
-  keywords: ["AI", "Singapore", "SME", "chatbot", "automation", "EIS", "tax deduction"],
+    "IonicX AI — Leading AI solutions company in Singapore. AI-powered websites, chatbots, and automation for SMEs. Qualify for 400% EIS tax deduction on AI investments. Custom AI website development.",
+  keywords: ["ai solutions singapore", "ai website development singapore", "ionicx ai", "AI chatbot singapore", "AI automation singapore", "SME AI solutions", "EIS tax deduction AI", "website development singapore"],
+  metadataBase: new URL("https://ionicx.ai"),
+  alternates: {
+    canonical: "https://ionicx.ai",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "IonicX AI — AI Solutions That Pay For Themselves",
-    description: "Singapore SMEs get 400% tax deduction on AI investments.",
+    title: "IonicX AI — AI Solutions Singapore | AI Website Development",
+    description: "Leading AI solutions company in Singapore. AI-powered websites, chatbots, and automation for SMEs. 400% EIS tax deduction eligible.",
     url: "https://ionicx.ai",
     siteName: "IonicX AI",
     type: "website",
+    locale: "en_SG",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IonicX AI — AI Solutions Singapore",
+    description: "AI-powered websites, chatbots, and automation for Singapore SMEs. 400% EIS tax deduction eligible.",
   },
 };
 
@@ -22,6 +36,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "IonicX AI",
+              "url": "https://ionicx.ai",
+              "description": "AI solutions company in Singapore providing AI-powered websites, chatbots, and automation for SMEs.",
+              "address": { "@type": "PostalAddress", "addressLocality": "Singapore", "addressCountry": "SG" },
+              "areaServed": { "@type": "Country", "name": "Singapore" },
+              "knowsAbout": ["Artificial Intelligence", "Web Development", "Chatbots", "Business Automation"],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "AI Solutions",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Website Development" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Chatbot Development" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Process Automation" } }
+                ]
+              }
+            }),
+          }}
+        />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );
