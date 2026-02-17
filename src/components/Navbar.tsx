@@ -64,7 +64,7 @@ export default function Navbar() {
         </div>
         <div className="flex lg:hidden items-center gap-3">
           <LangToggle />
-          <button className="text-[#00d4ff] text-2xl" onClick={() => setOpen(!open)}>
+          <button className="text-[#00d4ff] text-2xl" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>
             {open ? "✕" : "☰"}
           </button>
         </div>

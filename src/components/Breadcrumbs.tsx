@@ -13,6 +13,8 @@ const pathNames: Record<string, string> = {
   contact: "nav.contact",
   quiz: "nav.quiz",
   webinar: "nav.webinar",
+  privacy: "nav.privacy",
+  terms: "nav.terms",
 };
 
 export default function Breadcrumbs() {

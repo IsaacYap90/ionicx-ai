@@ -531,7 +531,7 @@ export default function WebinarPage() {
         <footer className="border-t border-white/5 py-10 px-4 text-center">
           <p className="text-[#00d4ff] font-bold text-lg font-[Space_Grotesk]">IonicX AI</p>
           <p className="text-[#8892b0] text-sm mt-1">Personal AI Agents for SMEs</p>
-          <p className="text-[#8892b0]/50 text-xs mt-4">UEN: 54578367L &middot; Singapore</p>
+          <p className="text-[#8892b0]/50 text-xs mt-4">UEN: 53518824B &middot; Singapore</p>
         </footer>
       </main>
     </LangCtx.Provider>

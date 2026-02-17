@@ -122,7 +122,7 @@ export default function ChatWidget() {
                 style={{ background: "none", border: "none", color: "#555", fontSize: 14, cursor: "pointer" }}>
                 🗑️
               </button>
-              <button onClick={() => setOpen(false)}
+              <button onClick={() => setOpen(false)} aria-label="Close chat"
                 style={{ background: "none", border: "none", color: "#888", fontSize: 20, cursor: "pointer", padding: "0 4px" }}>
                 ✕
               </button>

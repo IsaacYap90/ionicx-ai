@@ -70,9 +70,9 @@ export default function Footer() {
           {t("footer.copyright")}
         </div>
         <div className="flex gap-6 text-xs text-[var(--text-dim)]">
-          <Link href="/privacy" className="hover:text-[#00d4ff] transition-colors">Privacy Policy</Link>
+          <Link href="/privacy" className="hover:text-[#00d4ff] transition-colors">{t("nav.privacy")}</Link>
           <span>•</span>
-          <Link href="/terms" className="hover:text-[#00d4ff] transition-colors">Terms of Service</Link>
+          <Link href="/terms" className="hover:text-[#00d4ff] transition-colors">{t("nav.terms")}</Link>
         </div>
       </div>
     </footer>

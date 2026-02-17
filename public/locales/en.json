@@ -10,7 +10,6 @@
   "nav.quiz": "AI Quiz",
   "nav.freeQuiz": "🤖 Free AI Assessment →",
   "nav.getStarted": "Get Started",
-
   "hero.badge": "🏛️ Qualifies for SG Budget 2026 EIS",
   "hero.titlePrefix": "Personal AI",
   "hero.titleHighlight": "Agents for SMEs",
@@ -19,12 +18,10 @@
   "hero.eisSuffix": " eligible.",
   "hero.cta": "Get Your Free AI Consultation →",
   "hero.quizCta": "🤖 Find My Perfect Plan",
-
   "social.projects": "Projects Delivered",
   "social.industries": "Industries Served",
   "social.eis": "EIS Tax Deduction",
   "social.support": "AI Support",
-
   "calc.title": "EIS Tax",
   "calc.titleHighlight": "Calculator",
   "calc.desc": "See how much you save with the 400% Enterprise Innovation Scheme",
@@ -32,7 +29,6 @@
   "calc.deduction": "400% Deduction",
   "calc.taxSavings": "Tax Savings (17%)",
   "calc.effectiveCost": "Effective Cost",
-
   "solutions.title": "Our",
   "solutions.titleHighlight": "Solutions",
   "solutions.desc": "Personal AI Agents built for Singapore SMEs",
@@ -48,46 +44,39 @@
   "solutions.3.desc": "Real-time business intelligence dashboards that turn your data into actionable insights.",
   "solutions.4.title": "AI Automation",
   "solutions.4.desc": "Workflow automation, content generation, multilingual translation — save hours every week.",
-
   "solutions.page.title": "AI-Powered",
   "solutions.page.titleHighlight": "Solutions",
   "solutions.page.desc": "Everything your business needs to compete in the AI era — built specifically for Singapore SMEs.",
-
   "solutions.detail.0.desc": "Your own AI operations agent that lives on WhatsApp and Telegram. It manages your schedule, handles client communications, tracks inventory, and runs your daily operations — all through natural language commands.",
   "solutions.detail.0.feature.0": "WhatsApp & Telegram integration",
   "solutions.detail.0.feature.1": "Natural language scheduling & reminders",
   "solutions.detail.0.feature.2": "Client CRM with conversation history",
   "solutions.detail.0.feature.3": "Inventory & order tracking",
   "solutions.detail.0.feature.4": "Real-time business dashboard",
-
   "solutions.detail.1.desc": "Professionally designed websites powered by AI. Built-in smart ordering, booking systems, and e-commerce — all with an AI chatbot that turns visitors into paying customers while you sleep.",
   "solutions.detail.1.feature.0": "Custom responsive web design",
   "solutions.detail.1.feature.1": "AI chatbot that answers & converts",
   "solutions.detail.1.feature.2": "Smart ordering & menu systems",
   "solutions.detail.1.feature.3": "Online booking & scheduling",
   "solutions.detail.1.feature.4": "E-commerce with payment integration",
-
   "solutions.detail.2.desc": "Intelligent chatbots that speak your customers' language — literally. Handle inquiries, book appointments, answer FAQs, and escalate to humans when needed, all in English, Mandarin, Malay and more.",
   "solutions.detail.2.feature.0": "Multilingual support (EN, ZH, MS, more)",
   "solutions.detail.2.feature.1": "24/7 customer service automation",
   "solutions.detail.2.feature.2": "Appointment booking integration",
   "solutions.detail.2.feature.3": "FAQ knowledge base",
   "solutions.detail.2.feature.4": "Human handoff when needed",
-
   "solutions.detail.3.desc": "Turn your raw business data into beautiful, actionable dashboards. Track sales, customer behavior, inventory, and marketing ROI — all powered by AI that spots trends before you do.",
   "solutions.detail.3.feature.0": "Real-time sales & revenue tracking",
   "solutions.detail.3.feature.1": "Customer behavior analytics",
   "solutions.detail.3.feature.2": "Inventory forecasting",
   "solutions.detail.3.feature.3": "Marketing ROI dashboard",
   "solutions.detail.3.feature.4": "AI-powered insights & alerts",
-
   "solutions.detail.4.desc": "Automate the repetitive tasks that drain your time. From social media content generation to invoice processing, our AI automation tools let you focus on what matters — growing your business.",
   "solutions.detail.4.feature.0": "Social media content generation",
   "solutions.detail.4.feature.1": "Invoice & receipt processing",
   "solutions.detail.4.feature.2": "Email automation & follow-ups",
   "solutions.detail.4.feature.3": "Multi-language translation",
   "solutions.detail.4.feature.4": "Workflow triggers & actions",
-
   "pricing.title": "Simple",
   "pricing.titleHighlight": "Pricing",
   "pricing.page.title": "Transparent",
@@ -121,7 +110,6 @@
   "pricing.features.API Integrations": "API Integrations",
   "pricing.features.Dedicated Support": "Dedicated Support",
   "pricing.features.Dedicated Account Manager": "Dedicated Account Manager",
-
   "pricing.bundle.title": "🤖 Recommended Add-ons for {plan}",
   "pricing.bundle.desc": "Based on your selected plan, these add-ons would complement your setup perfectly.",
   "pricing.addon.extraPages": "Extra Pages (+5)",
@@ -129,7 +117,6 @@
   "pricing.addon.multiLang": "Multi-Language Support",
   "pricing.addon.analytics": "Advanced Analytics",
   "pricing.addon.booking": "Booking System",
-
   "pricing.compare.title": "Feature Comparison",
   "pricing.compare.feature": "Feature",
   "pricing.compare.row.0": "AI-Powered Website",
@@ -168,7 +155,6 @@
   "pricing.compare.e.6": "✓",
   "pricing.compare.e.7": "✓",
   "pricing.compare.e.8": "✓",
-
   "testimonials.title": "What Our",
   "testimonials.titleHighlight": "Clients Say",
   "testimonials.aiSummary": "AI-Generated Summary of Client Feedback",
@@ -182,13 +168,11 @@
   "testimonials.2.text": "Our real estate listings website with AI search has transformed how we do business. Clients can find properties using natural language. Game-changer.",
   "testimonials.2.name": "Rachel Tan",
   "testimonials.2.role": "Elite Properties SG, Director",
-
   "cta.title": "Ready to",
   "cta.titleHighlight": "Transform Your Business?",
   "cta.desc": "Join 10+ Singapore SMEs already using AI to grow their business. Book your free consultation today.",
   "cta.consultation": "Free AI Consultation →",
   "cta.viewWork": "View Our Work",
-
   "cases.title": "Our",
   "cases.titleHighlight": "Portfolio",
   "cases.desc": "10 real AI-powered websites we've built for Singapore businesses across different industries.",
@@ -244,7 +228,6 @@
   "cases.9.feature.0": "AI Property Search",
   "cases.9.feature.1": "Virtual Tours",
   "cases.9.feature.2": "Mortgage Calculator",
-
   "blog.title": "IonicX AI",
   "blog.titleHighlight": "Blog",
   "blog.desc": "Insights, guides, and case studies on AI for Singapore SMEs.",
@@ -256,7 +239,6 @@
   "blog.1.excerpt": "A step-by-step guide to claiming the Enterprise Innovation Scheme and dramatically reducing your AI investment cost.",
   "blog.2.title": "10 Industries We've Built AI Websites For (Case Studies)",
   "blog.2.excerpt": "From home bakers to real estate agencies — see how AI transforms businesses across 10 different verticals.",
-
   "blog.0.h.1": "The AI Shift is Happening Now",
   "blog.0.h.2": "What AI-Powered Means for Your Website",
   "blog.0.h.3": "The Cost of Waiting",
@@ -266,7 +248,6 @@
   "blog.0.p.2": "An AI-powered website isn't just a website with a chatbot slapped on. It means intelligent customer interaction, automated lead capture, smart content delivery, and data-driven optimization happening 24/7 without human intervention.",
   "blog.0.p.3": "Every month you delay, your competitors who've already adopted AI are capturing customers you're missing. The gap between AI-enabled and traditional businesses is widening exponentially.",
   "blog.0.p.4": "Start with a free consultation. We'll assess your business, recommend the right AI solution, and show you exactly how much you'll save with the EIS tax deduction. Most businesses go from consultation to live website in 2-3 weeks.",
-
   "blog.1.h.1": "What is the EIS 400% Deduction?",
   "blog.1.h.2": "The Math That Changes Everything",
   "blog.1.h.3": "Who Qualifies?",
@@ -276,7 +257,6 @@
   "blog.1.p.2": "Take our Starter plan at S$2,888: 400% deduction = S$11,552 deductible amount. At 17% corporate tax rate, that's S$1,964 in tax savings. Your effective cost? Just S$924. That's a 68% discount on professional AI website development.",
   "blog.1.p.3": "Any Singapore-registered business (UEN holder) investing in qualifying technology solutions. AI-powered websites, chatbots, and automation tools all qualify. Both new and existing businesses are eligible.",
   "blog.1.p.4": "We handle the documentation for you. After your AI solution is deployed, we provide all the necessary paperwork for your tax filing. Simply pass it to your accountant during tax season. It's that simple.",
-
   "blog.2.h.1": "Food & Beverage",
   "blog.2.h.2": "Health & Wellness",
   "blog.2.h.3": "Professional Services",
@@ -286,11 +266,9 @@
   "blog.2.p.2": "TCM clinics, beauty salons, gyms, and fitness studios all benefit from AI-powered booking systems, symptom checkers, and member management. Harmony TCM reduced no-shows by 60% with AI appointment reminders.",
   "blog.2.p.3": "Interior design firms, real estate agencies, and service businesses use AI to match clients with the right solutions, automate follow-ups, and provide instant quotes. Elite Properties SG processes 3x more inquiries with the same team.",
   "blog.2.p.4": "Wedding planners, tattoo artists, and event companies showcase their work with AI-enhanced portfolios that intelligently recommend services based on client preferences and budget.",
-
   "blog.cta.title": "Ready to Transform Your Business with AI?",
   "blog.cta.desc": "Book a free consultation and see what AI can do for your industry.",
   "blog.cta.button": "Get Free Consultation →",
-
   "about.page.title": "About",
   "about.page.titleHighlight": "IonicX AI",
   "about.page.desc": "We're on a mission to make AI accessible and affordable for every Singapore SME.",
@@ -307,7 +285,6 @@
   "about.values.local.title": "Built for Singapore",
   "about.values.local.desc": "Multi-language, EIS-aligned, and designed for the unique needs of Singapore's business landscape.",
   "about.cta": "Let's Build Your AI Solution →",
-
   "contact.page.title": "Get Your Free",
   "contact.page.titleHighlight": "AI Consultation",
   "contact.page.desc": "Tell us about your business and our AI will match you with the perfect solution.",
@@ -364,7 +341,6 @@
   "contact.bizType.education": "Education / Tuition",
   "contact.bizType.services": "Professional Services",
   "contact.bizType.other": "Other",
-
   "quiz.title": "AI Needs",
   "quiz.titleHighlight": "Assessment",
   "quiz.desc": "Answer 3 quick questions and our AI will recommend the perfect plan for your business.",
@@ -403,7 +379,6 @@
   "quiz.budget.3k-6k": "S$3,000 - S$6,000",
   "quiz.budget.6k-13k": "S$6,000 - S$13,000",
   "quiz.budget.13k+": "S$13,000+",
-
   "footer.tagline": "Personal AI Agents for Singapore SMEs. AI-powered websites, chatbots, and automation.",
   "footer.siteMap": "Site Map",
   "footer.solutions": "Solutions",
@@ -417,12 +392,12 @@
   "footer.about": "About",
   "footer.contact": "Contact",
   "footer.copyright": "© 2026 IonicX AI | UEN: 53518824B",
-
   "whatsapp.prefill": "Hi IonicX AI! I'm interested in an AI-powered website for my business.",
   "cookies.message": "We use cookies to improve your experience. By continuing, you agree to our use of cookies.",
   "cookies.accept": "Accept",
-
   "search.placeholder": "Search... e.g. 'how much for a bakery website'",
   "search.noResults": "No results found. Try a different search term.",
-  "search.title": "Search Results"
+  "search.title": "Search Results",
+  "nav.privacy": "Privacy Policy",
+  "nav.terms": "Terms of Service"
 }

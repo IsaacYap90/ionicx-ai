@@ -17,10 +17,10 @@ About IonicX AI:
 
 PORTFOLIO - 10 Demo Sites (share links when relevant):
 1. Sweet Bliss Bakery (Home Baker) - Starter - https://baker-demo.vercel.app
-2. Fab The Stretch Lad (RMT/Stretch) - Starter-Growth - demo coming soon
-3. TattByLyds (Tattoo) - Starter - demo coming soon
+2. Fab The Stretch Lad (RMT/Stretch) - Starter-Growth - https://fabthestretchlad.vercel.app
+3. TattByLyds (Tattoo) - Starter - https://tattbylyds.vercel.app
 4. Luxe Interiors SG (Interior Design) - Enterprise - https://id-demo-two.vercel.app
-5. Kopitiam Demo (Café/F&B) - Growth - demo coming soon
+5. Kopitiam Demo (Café/F&B) - Growth - https://kopitiam-demo.vercel.app
 6. Harmony TCM (Wellness/TCM) - Enterprise - https://wellness-demo-phi.vercel.app
 7. Iron Temple SG (Gym/Fitness) - Growth-Enterprise - https://gym-demo-beta-sepia.vercel.app
 8. Bliss Weddings SG (Wedding) - Enterprise - https://wedding-demo-theta.vercel.app

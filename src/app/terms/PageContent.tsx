@@ -1,49 +1,14 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-
-function Section({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  return (
-    <motion.section
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`relative px-6 md:px-12 lg:px-24 ${className}`}
-    >
-      {children}
-    </motion.section>
-  );
-}
+import Section from "@/components/Section";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Link from "next/link";
 
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[var(--card-border)]">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          <a href="/" className="text-2xl font-bold font-[family-name:'Space_Grotesk']">
-            IonicX<span className="text-[#00d4ff]"> AI</span>
-          </a>
-          <a
-            href="/"
-            className="text-sm text-[var(--text-dim)] hover:text-[#00d4ff] transition-colors"
-          >
-            ← Back to Home
-          </a>
-        </div>
-      </nav>
-
-      <main className="max-w-4xl mx-auto pt-32 pb-20">
+    <>
+      <Breadcrumbs />
+      <main className="max-w-4xl mx-auto pt-8 pb-20">
         <Section>
           <h1 className="text-4xl md:text-5xl font-bold font-[family-name:'Space_Grotesk'] mb-4">
             Terms of <span className="text-[#00d4ff]">Service</span>
@@ -165,15 +130,6 @@ export default function TermsOfService() {
           </Section>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[var(--card-border)] py-8 px-6 text-center text-sm text-[var(--text-dim)]">
-        <p>© {new Date().getFullYear()} IonicX AI. All rights reserved.</p>
-        <div className="mt-2 space-x-4">
-          <a href="/privacy" className="text-[#00d4ff] hover:underline">Privacy Policy</a>
-          <a href="/terms" className="text-[#00d4ff] hover:underline">Terms of Service</a>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
