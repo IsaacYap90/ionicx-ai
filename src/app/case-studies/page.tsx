@@ -1,69 +1,49 @@
-"use client";
+import type { Metadata } from "next";
+import CaseStudiesPageContent from "./PageContent";
 
-import { motion } from "framer-motion";
-import { useLanguage } from "@/context/LanguageContext";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Section from "@/components/Section";
-
-const caseStudies = [
-  { icon: "🧁", url: "https://baker-demo.vercel.app", tier: "Starter", tierColor: "#00ff88" },
-  { icon: "🧘", url: null, tier: "Starter-Growth", tierColor: "#00d4ff" },
-  { icon: "🎨", url: null, tier: "Starter", tierColor: "#00ff88" },
-  { icon: "🏠", url: "https://id-demo-two.vercel.app", tier: "Enterprise", tierColor: "#FFD700" },
-  { icon: "☕", url: null, tier: "Growth", tierColor: "#00d4ff" },
-  { icon: "🌿", url: "https://wellness-demo-phi.vercel.app", tier: "Enterprise", tierColor: "#FFD700" },
-  { icon: "💪", url: "https://gym-demo-beta-sepia.vercel.app", tier: "Growth-Enterprise", tierColor: "#00d4ff" },
-  { icon: "💒", url: "https://wedding-demo-theta.vercel.app", tier: "Enterprise", tierColor: "#FFD700" },
-  { icon: "✨", url: "https://beauty-demo-kappa.vercel.app", tier: "Enterprise", tierColor: "#FFD700" },
-  { icon: "🏢", url: "https://realestate-demo-gilt.vercel.app", tier: "Enterprise", tierColor: "#FFD700" },
-];
+export const metadata: Metadata = {
+  title: "Case Studies | 10 AI-Powered Demo Sites | IonicX AI",
+  description: "Explore 10 AI-powered demo websites across F&B, wellness, fitness, real estate, beauty & more. See what IonicX AI builds for Singapore SMEs.",
+  keywords: ["AI website Singapore", "AI website examples", "AI chatbot Singapore", "website development Singapore AI", "AI solutions for SME Singapore"],
+  alternates: { canonical: "https://ionicx.ai/case-studies" },
+  openGraph: {
+    title: "Case Studies | 10 AI-Powered Demo Sites | IonicX AI",
+    description: "Explore 10 AI-powered demo websites across F&B, wellness, fitness, real estate, beauty & more.",
+    url: "https://ionicx.ai/case-studies",
+    siteName: "IonicX AI",
+    type: "website",
+    locale: "en_SG",
+  },
+};
 
 export default function CaseStudiesPage() {
-  const { t } = useLanguage();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "IonicX AI Case Studies",
+    description: "10 AI-powered demo websites built by IonicX AI for various industries",
+    numberOfItems: 10,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Artisan Bakery", url: "https://baker-demo.vercel.app" },
+      { "@type": "ListItem", position: 2, name: "Wellness Studio" },
+      { "@type": "ListItem", position: 3, name: "Art Gallery" },
+      { "@type": "ListItem", position: 4, name: "Interior Design", url: "https://id-demo-two.vercel.app" },
+      { "@type": "ListItem", position: 5, name: "Coffee Shop" },
+      { "@type": "ListItem", position: 6, name: "Wellness Center", url: "https://wellness-demo-phi.vercel.app" },
+      { "@type": "ListItem", position: 7, name: "Fitness Studio", url: "https://gym-demo-beta-sepia.vercel.app" },
+      { "@type": "ListItem", position: 8, name: "Wedding Planner", url: "https://wedding-demo-theta.vercel.app" },
+      { "@type": "ListItem", position: 9, name: "Beauty Salon", url: "https://beauty-demo-kappa.vercel.app" },
+      { "@type": "ListItem", position: 10, name: "Real Estate", url: "https://realestate-demo-gilt.vercel.app" },
+    ],
+  };
+
   return (
     <>
-      <Breadcrumbs />
-      <Section className="py-16">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            {t("cases.title")} <span className="text-[#00d4ff]">{t("cases.titleHighlight")}</span>
-          </h1>
-          <p className="text-center text-[var(--text-dim)] mb-16 max-w-2xl mx-auto text-lg">{t("cases.desc")}</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {caseStudies.map((cs, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * 0.1 }}
-                className="glass rounded-2xl p-6 hover:border-[#00d4ff]/30 transition-colors group">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-4xl">{cs.icon}</span>
-                  <span className="px-3 py-1 rounded-full text-xs font-bold" style={{ background: `${cs.tierColor}20`, color: cs.tierColor }}>
-                    {cs.tier}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold mb-2 group-hover:text-[#00d4ff] transition-colors">{t(`cases.${i}.name`)}</h3>
-                <p className="text-sm text-[var(--text-dim)] mb-4">{t(`cases.${i}.desc`)}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {[0, 1, 2].map((fi) => (
-                    <span key={fi} className="px-2 py-1 rounded-full glass text-xs text-[#00d4ff]">
-                      {t(`cases.${i}.feature.${fi}`)}
-                    </span>
-                  ))}
-                </div>
-                {cs.url ? (
-                  <a href={cs.url} target="_blank" rel="noopener noreferrer"
-                    className="block text-center py-2 rounded-full glass border border-[#00d4ff]/30 text-[#00d4ff] text-sm font-semibold hover:bg-[#00d4ff]/10 transition-all">
-                    {t("cases.viewDemo")} →
-                  </a>
-                ) : (
-                  <span className="block text-center py-2 rounded-full glass text-[var(--text-dim)] text-sm">
-                    {t("cases.comingSoon")}
-                  </span>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </Section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <CaseStudiesPageContent />
     </>
   );
 }

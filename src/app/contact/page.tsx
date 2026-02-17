@@ -1,184 +1,51 @@
-"use client";
+import type { Metadata } from "next";
+import ContactPageContent from "./PageContent";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { useLanguage } from "@/context/LanguageContext";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Section from "@/components/Section";
-
-type LeadScore = "hot" | "warm" | "cold" | null;
-
-function scoreLeadFn(data: Record<string, string>): { score: LeadScore; points: number } {
-  let points = 0;
-  // Revenue
-  if (data.revenue === "50k+") points += 30;
-  else if (data.revenue === "20k-50k") points += 20;
-  else if (data.revenue === "10k-20k") points += 15;
-  else points += 5;
-  // Website status
-  if (data.websiteStatus === "none") points += 25;
-  else if (data.websiteStatus === "basic") points += 15;
-  else points += 10;
-  // Timeline
-  if (data.timeline === "asap") points += 30;
-  else if (data.timeline === "1-3months") points += 20;
-  else if (data.timeline === "3-6months") points += 10;
-  else points += 5;
-  // Budget
-  if (data.budget === "10k+") points += 25;
-  else if (data.budget === "5k-10k") points += 20;
-  else if (data.budget === "2k-5k") points += 15;
-  else points += 5;
-
-  const score: LeadScore = points >= 70 ? "hot" : points >= 45 ? "warm" : "cold";
-  return { score, points };
-}
-
-const businessTypes = [
-  "fnb", "retail", "beauty", "fitness", "wellness", "realestate",
-  "wedding", "interior", "education", "services", "other"
-];
+export const metadata: Metadata = {
+  title: "Contact IonicX AI | Get Your AI Website Quote | Singapore",
+  description: "Get a free quote for your AI-powered website. Contact IonicX AI via form, WhatsApp or email. AI lead scoring for faster response times.",
+  keywords: ["contact IonicX AI", "AI website quote Singapore", "AI website Singapore", "website development Singapore AI", "AI chatbot Singapore"],
+  alternates: { canonical: "https://ionicx.ai/contact" },
+  openGraph: {
+    title: "Contact IonicX AI | Get Your AI Website Quote | Singapore",
+    description: "Get a free quote for your AI-powered website. Contact IonicX AI via form, WhatsApp or email.",
+    url: "https://ionicx.ai/contact",
+    siteName: "IonicX AI",
+    type: "website",
+    locale: "en_SG",
+  },
+};
 
 export default function ContactPage() {
-  const { t } = useLanguage();
-  const [submitted, setSubmitted] = useState(false);
-  const [leadScore, setLeadScore] = useState<LeadScore>(null);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "IonicX AI",
+    url: "https://ionicx.ai",
+    email: "hello@ionicx.ai",
+    telephone: "+6580268821",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Singapore",
+      addressCountry: "SG",
+    },
+    areaServed: { "@type": "Country", name: "Singapore" },
+    priceRange: "S$2,888 - S$12,888+",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  };
 
   return (
     <>
-      <Breadcrumbs />
-      <Section className="py-16">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            {t("contact.page.title")} <span className="text-[#00ff88] text-glow-green">{t("contact.page.titleHighlight")}</span>
-          </h1>
-          <p className="text-center text-[var(--text-dim)] mb-16 text-lg">{t("contact.page.desc")}</p>
-
-          {submitted ? (
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
-              className="glass rounded-2xl p-12 text-center glow-green">
-              <div className="text-5xl mb-4">✅</div>
-              <h2 className="text-2xl font-bold mb-2">{t("contact.thankYou")}</h2>
-              <p className="text-[var(--text-dim)] mb-4">{t("contact.thankYouDesc")}</p>
-              {leadScore && (
-                <div className={`inline-block px-4 py-2 rounded-full text-sm font-bold ${
-                  leadScore === "hot" ? "bg-red-500/20 text-red-400" :
-                  leadScore === "warm" ? "bg-orange-500/20 text-orange-400" :
-                  "bg-blue-500/20 text-blue-400"
-                }`}>
-                  {t(`contact.score.${leadScore}`)}
-                </div>
-              )}
-            </motion.div>
-          ) : (
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-                const fd = new FormData(e.currentTarget);
-                const data = Object.fromEntries(fd.entries()) as Record<string, string>;
-                const { score } = scoreLeadFn(data);
-                setLeadScore(score);
-                try {
-                  await fetch("/api/contact", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ ...data, leadScore: score }),
-                  });
-                } catch {}
-                setSubmitted(true);
-              }}
-              className="glass rounded-2xl p-8 md:p-12 glow-cyan space-y-6"
-            >
-              {/* Basic Info */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.name")} *</label>
-                  <input type="text" name="name" required placeholder={t("contact.placeholder.name")}
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:border-[#00d4ff]/50 focus:outline-none transition-colors" />
-                </div>
-                <div>
-                  <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.email")} *</label>
-                  <input type="email" name="email" required placeholder={t("contact.placeholder.email")}
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:border-[#00d4ff]/50 focus:outline-none transition-colors" />
-                </div>
-                <div>
-                  <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.phone")}</label>
-                  <input type="tel" name="phone" placeholder={t("contact.placeholder.phone")}
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:border-[#00d4ff]/50 focus:outline-none transition-colors" />
-                </div>
-                <div>
-                  <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.business")} *</label>
-                  <select name="businessType" required
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-[#00d4ff]/50 focus:outline-none transition-colors">
-                    <option value="" className="bg-[#0a0a1a]">{t("contact.select")}</option>
-                    {businessTypes.map((bt) => (
-                      <option key={bt} value={bt} className="bg-[#0a0a1a]">{t(`contact.bizType.${bt}`)}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* AI Lead Scoring Fields */}
-              <div className="border-t border-[var(--card-border)] pt-6">
-                <h3 className="text-sm font-semibold text-[#00d4ff] mb-4">🤖 {t("contact.aiSection")}</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.revenue")}</label>
-                    <select name="revenue" className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-[#00d4ff]/50 focus:outline-none transition-colors">
-                      <option value="under10k" className="bg-[#0a0a1a]">{t("contact.rev.under10k")}</option>
-                      <option value="10k-20k" className="bg-[#0a0a1a]">{t("contact.rev.10k-20k")}</option>
-                      <option value="20k-50k" className="bg-[#0a0a1a]">{t("contact.rev.20k-50k")}</option>
-                      <option value="50k+" className="bg-[#0a0a1a]">{t("contact.rev.50k+")}</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.websiteStatus")}</label>
-                    <select name="websiteStatus" className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-[#00d4ff]/50 focus:outline-none transition-colors">
-                      <option value="none" className="bg-[#0a0a1a]">{t("contact.ws.none")}</option>
-                      <option value="basic" className="bg-[#0a0a1a]">{t("contact.ws.basic")}</option>
-                      <option value="upgrade" className="bg-[#0a0a1a]">{t("contact.ws.upgrade")}</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.timeline")}</label>
-                    <select name="timeline" className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-[#00d4ff]/50 focus:outline-none transition-colors">
-                      <option value="asap" className="bg-[#0a0a1a]">{t("contact.tl.asap")}</option>
-                      <option value="1-3months" className="bg-[#0a0a1a]">{t("contact.tl.1-3months")}</option>
-                      <option value="3-6months" className="bg-[#0a0a1a]">{t("contact.tl.3-6months")}</option>
-                      <option value="exploring" className="bg-[#0a0a1a]">{t("contact.tl.exploring")}</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.budget")}</label>
-                    <select name="budget" className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-[#00d4ff]/50 focus:outline-none transition-colors">
-                      <option value="under2k" className="bg-[#0a0a1a]">{t("contact.bgt.under2k")}</option>
-                      <option value="2k-5k" className="bg-[#0a0a1a]">{t("contact.bgt.2k-5k")}</option>
-                      <option value="5k-10k" className="bg-[#0a0a1a]">{t("contact.bgt.5k-10k")}</option>
-                      <option value="10k+" className="bg-[#0a0a1a]">{t("contact.bgt.10k+")}</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm text-[var(--text-dim)] mb-2">{t("contact.label.message")}</label>
-                <textarea name="message" rows={4} placeholder={t("contact.placeholder.message")}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:border-[#00d4ff]/50 focus:outline-none transition-colors resize-none" />
-              </div>
-
-              <button type="submit"
-                className="w-full py-4 rounded-full bg-[#00ff88] text-[#0a0a1a] font-bold text-lg hover:shadow-[0_0_30px_rgba(0,255,136,0.4)] transition-all hover:scale-[1.02]">
-                {t("contact.submit")}
-              </button>
-
-              <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--text-dim)]">
-                <a href="https://wa.me/6580268821" target="_blank" rel="noopener noreferrer" className="hover:text-[#00ff88] transition-colors">{t("contact.whatsapp")}</a>
-                <span>{t("contact.email")}</span>
-              </div>
-            </form>
-          )}
-        </div>
-      </Section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ContactPageContent />
     </>
   );
 }
