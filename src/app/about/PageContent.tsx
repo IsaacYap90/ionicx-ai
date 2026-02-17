@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Section from "@/components/Section";
+import Image from "next/image";
 import Link from "next/link";
 
 const values = [
@@ -28,8 +29,8 @@ export default function AboutPage() {
           {/* Founder Story */}
           <div className="glass rounded-2xl p-8 md:p-12 mb-12 glow-cyan">
             <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#00d4ff] to-[#6366F1] flex items-center justify-center text-4xl flex-shrink-0">
-                👨‍💻
+              <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#00d4ff]/30">
+                <Image src="/images/isaac-host.webp" alt="Isaac Yap - Founder & CEO, IonicX AI" width={96} height={96} className="w-full h-full object-cover" />
               </div>
               <div>
                 <h2 className="text-2xl font-bold mb-2">{t("about.founder.name")}</h2>

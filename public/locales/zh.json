@@ -38,7 +38,7 @@
   "solutions.desc": "为新加坡中小企业打造的专属 AI 智能代理人",
   "solutions.viewAll": "查看所有方案 →",
   "solutions.cta": "预约免费 AI 咨询 →",
-  "solutions.0.title": "AI 智能运营管家",
+  "solutions.0.title": "个人 AI 运营代理",
   "solutions.0.desc": "您专属的 WhatsApp/Telegram AI 助手。以自然语言管理排程、客户和日常运营 — 由实时数据库驱动。",
   "solutions.1.title": "AI 智能网站",
   "solutions.1.desc": "智能点餐、预约、电商系统，内置 AI 聊天机器人，助您将访客转化为客户。",
@@ -53,7 +53,7 @@
   "solutions.page.titleHighlight": "解决方案",
   "solutions.page.desc": "您的企业在AI时代竞争所需的一切 — 专为新加坡中小企业打造。",
 
-  "solutions.detail.0.desc": "您专属的 AI 运营管家，常驻 WhatsApp 和 Telegram。通过自然语言管理您的日程、处理客户沟通、跟踪库存并运营日常业务。",
+  "solutions.detail.0.desc": "您专属的 AI 运营代理，常驻 WhatsApp 和 Telegram。通过自然语言管理您的日程、处理客户沟通、跟踪库存并运营日常业务。",
   "solutions.detail.0.feature.0": "WhatsApp 和 Telegram 集成",
   "solutions.detail.0.feature.1": "自然语言排程和提醒",
   "solutions.detail.0.feature.2": "客户 CRM 和对话记录",

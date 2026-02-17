@@ -7,10 +7,10 @@ import Section from "@/components/Section";
 
 const caseStudies = [
   { icon: "🧁", url: "https://baker-demo.vercel.app", tier: "Starter", tierColor: "#00ff88" },
-  { icon: "🧘", url: null, tier: "Starter-Growth", tierColor: "#00d4ff" },
-  { icon: "🎨", url: null, tier: "Starter", tierColor: "#00ff88" },
+  { icon: "🧘", url: "https://fabthestretchlad.vercel.app", tier: "Starter-Growth", tierColor: "#00d4ff" },
+  { icon: "🎨", url: "https://tattbylyds.vercel.app", tier: "Starter", tierColor: "#00ff88" },
   { icon: "🏠", url: "https://id-demo-two.vercel.app", tier: "Enterprise", tierColor: "#FFD700" },
-  { icon: "☕", url: null, tier: "Growth", tierColor: "#00d4ff" },
+  { icon: "☕", url: "https://kopitiam-demo.vercel.app", tier: "Growth", tierColor: "#00d4ff" },
   { icon: "🌿", url: "https://wellness-demo-phi.vercel.app", tier: "Enterprise", tierColor: "#FFD700" },
   { icon: "💪", url: "https://gym-demo-beta-sepia.vercel.app", tier: "Growth-Enterprise", tierColor: "#00d4ff" },
   { icon: "💒", url: "https://wedding-demo-theta.vercel.app", tier: "Enterprise", tierColor: "#FFD700" },

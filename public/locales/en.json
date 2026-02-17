@@ -38,7 +38,7 @@
   "solutions.desc": "Personal AI Agents built for Singapore SMEs",
   "solutions.viewAll": "View All Solutions →",
   "solutions.cta": "Get Your Free AI Consultation →",
-  "solutions.0.title": "AI Personal Operations Manager",
+  "solutions.0.title": "Personal AI Operations Agent",
   "solutions.0.desc": "Your own AI agent on WhatsApp/Telegram. Manage scheduling, clients, and daily ops with natural language — powered by a real-time database.",
   "solutions.1.title": "AI-Powered Websites",
   "solutions.1.desc": "Smart ordering, booking, e-commerce with built-in AI chatbot that converts visitors to customers.",
@@ -53,7 +53,7 @@
   "solutions.page.titleHighlight": "Solutions",
   "solutions.page.desc": "Everything your business needs to compete in the AI era — built specifically for Singapore SMEs.",
 
-  "solutions.detail.0.desc": "Your own AI operations manager that lives on WhatsApp and Telegram. It manages your schedule, handles client communications, tracks inventory, and runs your daily operations — all through natural language commands.",
+  "solutions.detail.0.desc": "Your own AI operations agent that lives on WhatsApp and Telegram. It manages your schedule, handles client communications, tracks inventory, and runs your daily operations — all through natural language commands.",
   "solutions.detail.0.feature.0": "WhatsApp & Telegram integration",
   "solutions.detail.0.feature.1": "Natural language scheduling & reminders",
   "solutions.detail.0.feature.2": "Client CRM with conversation history",
