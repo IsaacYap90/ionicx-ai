@@ -1,9 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getClientIp } from "../_lib/rateLimit";
 
 const TG_TOKEN = process.env.TELEGRAM_IONICX_LEADS_BOT_TOKEN;
 const TG_CHAT_ID = process.env.TELEGRAM_ISAAC_CHAT_ID || "1729085064";
 
 export async function POST(req: NextRequest) {
+  const rl = rateLimit(getClientIp(req));
+  if (!rl.allowed) {
+    return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429, headers: { 'Retry-After': String(rl.retryAfter) } });
+  }
   try {
     const body = await req.json();
     const { name, email, phone, business, businessType, message, revenue, websiteStatus, timeline, budget, leadScore, source, recommendation, features } = body;

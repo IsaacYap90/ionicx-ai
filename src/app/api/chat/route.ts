@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getClientIp } from "../_lib/rateLimit";
 
 const SYSTEM_PROMPT = `You are Robin, IonicX AI's AI sales agent on ionicx.ai. You help Singapore SME owners understand how AI can transform their business.
 
@@ -51,6 +52,10 @@ Style:
 - Share demo links when the user's industry matches one`;
 
 export async function POST(req: NextRequest) {
+  const rl = rateLimit(getClientIp(req));
+  if (!rl.allowed) {
+    return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429, headers: { 'Retry-After': String(rl.retryAfter) } });
+  }
   try {
     const { messages, lang } = await req.json();
 
