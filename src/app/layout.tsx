@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ClientLayout from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "IonicX AI — Personal AI Agents for SMEs | Singapore",
@@ -7,13 +8,8 @@ export const metadata: Metadata = {
     "IonicX AI — Personal AI Agents for Singapore SMEs. AI-powered websites, chatbots, and automation. Qualify for 400% EIS tax deduction on AI investments.",
   keywords: ["ai solutions singapore", "ai website development singapore", "ionicx ai", "AI chatbot singapore", "AI automation singapore", "SME AI solutions", "EIS tax deduction AI", "website development singapore"],
   metadataBase: new URL("https://ionicx.ai"),
-  alternates: {
-    canonical: "https://ionicx.ai",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  alternates: { canonical: "https://ionicx.ai" },
+  robots: { index: true, follow: true },
   openGraph: {
     title: "IonicX AI — Personal AI Agents for SMEs | AI Website Development",
     description: "Personal AI Agents for Singapore SMEs. AI-powered websites, chatbots, and automation. 400% EIS tax deduction eligible.",
@@ -62,7 +58,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <ClientLayout>{children}</ClientLayout>
+      </body>
     </html>
   );
 }
