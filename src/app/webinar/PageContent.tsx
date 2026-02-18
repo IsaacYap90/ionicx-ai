@@ -87,6 +87,7 @@ const translations: Record<string, { en: string; zh: string }> = {
   // Success
   "success.title": { en: "You're In!", zh: "报名成功！" },
   "success.msg": { en: "Check your email for confirmation details. We'll see you at the webinar!", zh: "请查看您的电邮获取确认详情。我们研讨会见！" },
+  "success.zoom": { en: "Join via Zoom", zh: "通过Zoom加入" },
 
   // FAQ
   "faq.title": { en: "Frequently Asked Questions", zh: "常见问题" },
@@ -334,7 +335,9 @@ function RegistrationForm() {
       <div className="glass rounded-2xl p-8 text-center max-w-lg mx-auto">
         <div className="text-5xl mb-4">🎉</div>
         <h3 className="text-2xl font-bold text-[#00ff88] mb-2 font-[Space_Grotesk]">{t("success.title")}</h3>
-        <p className="text-[#8892b0]">{t("success.msg")}</p>
+        <p className="text-[#8892b0] mb-4">{t("success.msg")}</p>
+        <a href="https://us04web.zoom.us/j/77910233906" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#00d4ff] text-black font-bold px-6 py-3 rounded-lg hover:bg-[#00ff88] transition-colors">{t("success.zoom")}</a>
+        <p className="text-[#8892b0]/60 text-sm mt-2">Meeting ID: 779 1023 3906</p>
       </div>
     );
   }
