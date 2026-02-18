@@ -399,5 +399,20 @@
   "search.noResults": "No results found. Try a different search term.",
   "search.title": "Search Results",
   "nav.privacy": "Privacy Policy",
-  "nav.terms": "Terms of Service"
+  "nav.terms": "Terms of Service",
+  "nav.whatsapp": "WhatsApp Us",
+  "howItWorks.title": "How It",
+  "howItWorks.titleHighlight": "Works",
+  "howItWorks.desc": "Get your AI solution up and running in 3 simple steps.",
+  "howItWorks.step.0.icon": "📞",
+  "howItWorks.step.0.title": "Book a Free Call",
+  "howItWorks.step.0.desc": "Tell us about your business. We'll recommend the perfect AI solution for you.",
+  "howItWorks.step.1.icon": "🤖",
+  "howItWorks.step.1.title": "We Build Your AI Solution",
+  "howItWorks.step.1.desc": "Our team builds your AI-powered website, chatbot, and automations in 2-3 weeks.",
+  "howItWorks.step.2.icon": "🚀",
+  "howItWorks.step.2.title": "Launch & Grow",
+  "howItWorks.step.2.desc": "Go live and watch your AI employee handle customers, bookings, and ops 24/7.",
+  "cases.portfolioNote": "Portfolio includes client projects and demonstration sites",
+  "cases.viewProject": "View Project"
 }

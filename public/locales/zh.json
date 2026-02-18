@@ -399,5 +399,20 @@
   "search.noResults": "未找到结果。请尝试其他搜索词。",
   "search.title": "搜索结果",
   "nav.privacy": "隐私政策",
-  "nav.terms": "服务条款"
+  "nav.terms": "服务条款",
+  "nav.whatsapp": "WhatsApp 联系我们",
+  "howItWorks.title": "如何",
+  "howItWorks.titleHighlight": "运作",
+  "howItWorks.desc": "3个简单步骤，让您的 AI 方案上线运行。",
+  "howItWorks.step.0.icon": "📞",
+  "howItWorks.step.0.title": "预约免费咨询",
+  "howItWorks.step.0.desc": "告诉我们您的业务情况，我们将为您推荐最佳 AI 方案。",
+  "howItWorks.step.1.icon": "🤖",
+  "howItWorks.step.1.title": "我们打造您的 AI 方案",
+  "howItWorks.step.1.desc": "我们的团队在2-3周内为您搭建 AI 网站、聊天机器人和自动化工具。",
+  "howItWorks.step.2.icon": "🚀",
+  "howItWorks.step.2.title": "上线运营",
+  "howItWorks.step.2.desc": "正式上线，AI 员工全天候为您处理客户、预约和运营。",
+  "cases.portfolioNote": "作品集包括客户项目和演示网站",
+  "cases.viewProject": "查看项目"
 }

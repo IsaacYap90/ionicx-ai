@@ -5,21 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 
-function LangToggle() {
-  const { lang, setLang } = useLanguage();
-  return (
-    <button
-      onClick={() => setLang(lang === "en" ? "zh" : "en")}
-      className="px-3 py-1.5 rounded-full glass text-xs font-semibold tracking-wide transition-colors hover:border-[#00d4ff]/50"
-      aria-label="Toggle language"
-    >
-      <span className={lang === "en" ? "text-[#00d4ff]" : "text-[var(--text-dim)]"}>EN</span>
-      <span className="text-[var(--text-dim)] mx-1">|</span>
-      <span className={lang === "zh" ? "text-[#00d4ff]" : "text-[var(--text-dim)]"}>中文</span>
-    </button>
-  );
-}
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
@@ -29,8 +14,6 @@ export default function Navbar() {
     { label: t("nav.solutions"), href: "/solutions" },
     { label: t("nav.pricing"), href: "/pricing" },
     { label: t("nav.caseStudies"), href: "/case-studies" },
-    { label: t("nav.blog"), href: "/blog" },
-    { label: t("nav.about"), href: "/about" },
     { label: t("nav.contact"), href: "/contact" },
   ];
 
@@ -54,16 +37,16 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <LangToggle />
-          <Link
-            href="/contact"
-            className="px-5 py-2 rounded-full bg-[#00ff88] text-[#0a0a1a] font-semibold text-sm hover:shadow-[0_0_20px_rgba(0,255,136,0.4)] transition-shadow"
+          <a
+            href="https://wa.me/6580268821"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-shadow"
           >
-            {t("nav.getStarted")}
-          </Link>
+            💬 {t("nav.whatsapp")}
+          </a>
         </div>
         <div className="flex lg:hidden items-center gap-3">
-          <LangToggle />
           <button className="text-[#00d4ff] text-2xl" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>
             {open ? "✕" : "☰"}
           </button>
@@ -83,13 +66,15 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/quiz"
+          <a
+            href="https://wa.me/6580268821"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="block py-3 text-[#00ff88] font-semibold"
+            className="block py-3 text-[#25D366] font-semibold"
           >
-            {t("nav.freeQuiz")}
-          </Link>
+            💬 {t("nav.whatsapp")}
+          </a>
         </div>
       )}
     </nav>

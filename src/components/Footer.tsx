@@ -6,19 +6,19 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function Footer() {
   const { t } = useLanguage();
 
-  const siteLinks = [
+  const quickLinks = [
     { label: t("nav.solutions"), href: "/solutions" },
     { label: t("nav.pricing"), href: "/pricing" },
     { label: t("nav.caseStudies"), href: "/case-studies" },
-    { label: t("nav.blog"), href: "/blog" },
     { label: t("nav.about"), href: "/about" },
     { label: t("nav.contact"), href: "/contact" },
-    { label: t("nav.webinar"), href: "/webinar" },
+    { label: t("nav.privacy"), href: "/privacy" },
+    { label: t("nav.terms"), href: "/terms" },
   ];
 
   return (
     <footer className="border-t border-[var(--card-border)] px-6 py-16 mt-12">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
           <div className="text-xl font-bold font-[family-name:'Space_Grotesk'] mb-4">
             IonicX<span className="text-[#00d4ff]"> AI</span>
@@ -35,7 +35,7 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-4 text-[#00d4ff]">{t("footer.siteMap")}</h4>
           <div className="space-y-2">
-            {siteLinks.map((link) => (
+            {quickLinks.map((link) => (
               <Link key={link.href} href={link.href} className="block text-sm text-[var(--text-dim)] hover:text-[#00d4ff] transition-colors">
                 {link.label}
               </Link>
@@ -44,21 +44,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-semibold mb-4 text-[#00d4ff]">{t("footer.solutions")}</h4>
-          <div className="space-y-2 text-sm text-[var(--text-dim)]">
-            <p>{t("footer.sol.websites")}</p>
-            <p>{t("footer.sol.chatbots")}</p>
-            <p>{t("footer.sol.automation")}</p>
-            <p>{t("footer.sol.analytics")}</p>
-            <p>{t("footer.sol.crm")}</p>
-          </div>
-        </div>
-
-        <div>
           <h4 className="font-semibold mb-4 text-[#00d4ff]">{t("footer.contactInfo")}</h4>
           <div className="space-y-2 text-sm text-[var(--text-dim)]">
             <p>📧 hello@ionicx.ai</p>
-            <p>💬 +65 8026 8821</p>
+            <p>💬 <a href="https://wa.me/6580268821" target="_blank" rel="noopener noreferrer" className="hover:text-[#25D366] transition-colors">+65 8026 8821</a></p>
             <p>🇸🇬 Singapore</p>
             <p>UEN: 53518824B</p>
           </div>

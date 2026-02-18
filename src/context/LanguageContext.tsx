@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import enDefaults from "../../public/locales/en.json";
 
 type Lang = "en" | "zh";
 type Translations = Record<string, string>;
@@ -14,12 +15,12 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType>({
   lang: "en",
   setLang: () => {},
-  t: (key) => key,
+  t: (key) => (enDefaults as Translations)[key] || key,
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
-  const [translations, setTranslations] = useState<Translations>({});
+  const [translations, setTranslations] = useState<Translations>(enDefaults as Translations);
 
   const setLang = (l: Lang) => {
     setLangState(l);
@@ -32,13 +33,17 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
+    if (lang === "en") {
+      setTranslations(enDefaults as Translations);
+      return;
+    }
     fetch(`/locales/${lang}.json`)
       .then((r) => r.json())
       .then(setTranslations)
-      .catch(() => {});
+      .catch(() => setTranslations(enDefaults as Translations));
   }, [lang]);
 
-  const t = (key: string) => translations[key] || key;
+  const t = (key: string) => translations[key] || (enDefaults as Translations)[key] || key;
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>
