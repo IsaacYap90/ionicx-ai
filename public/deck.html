@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Websites for Singapore SMEs — IonicX AI</title>
+<title>AI Websites for Singapore SMEs — IonicX AI Webinar</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
@@ -35,20 +35,21 @@ body{background:#0a0a1a;color:#fff;font-family:'Inter',system-ui,sans-serif;over
 .slide .steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;margin-top:32px;text-align:center}
 .slide .steps .step{font-size:1.3rem;line-height:1.7}
 .slide .steps .step .num{font-size:3rem;font-weight:900;color:#00d4ff;margin-bottom:8px}
-/* Progress bar */
+.slide .features{display:grid;grid-template-columns:1fr 1fr;gap:20px 48px;margin-top:16px}
+.slide .features .feat{font-size:1.4rem;line-height:1.8;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.slide .features .feat .icon{font-size:1.6rem;margin-right:12px}
+.slide .eis-box{background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(0,255,136,.08));border:1px solid rgba(0,212,255,.2);border-radius:16px;padding:36px 40px;margin-top:16px}
+.slide .eis-box ul{font-size:1.35rem}
+.slide .buildup{font-size:2.2rem;font-weight:300;color:rgba(255,255,255,.5);line-height:2}
 #progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#00d4ff,#00ff88);transition:width .4s ease;z-index:100}
-/* Slide counter */
 #counter{position:fixed;bottom:28px;right:40px;font-size:.95rem;color:rgba(255,255,255,.3);font-weight:600;z-index:100}
-/* Notes panel */
 #notes{position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,.92);border-top:1px solid rgba(0,212,255,.2);padding:20px 40px;font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.6;max-height:180px;overflow-y:auto;transform:translateY(100%);transition:transform .3s ease;z-index:100}
 #notes.show{transform:translateY(0)}
 #notes .label{color:#00d4ff;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
-/* Title slide special */
 .title-slide{text-align:center;align-items:center}
 .title-slide h1{font-size:4rem}
 .title-slide .logo{font-size:1.1rem;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:24px}
 .title-slide .byline{font-size:1.3rem;color:rgba(255,255,255,.5);margin-top:16px}
-/* QA slide */
 .qa h1{font-size:5rem}
 </style>
 </head>
@@ -57,92 +58,166 @@ body{background:#0a0a1a;color:#fff;font-family:'Inter',system-ui,sans-serif;over
 <div id="counter"></div>
 <div class="deck" id="deck">
 
-<!-- 1. Title -->
-<div class="slide title-slide" data-notes="Welcome everyone! Thank you for taking 45 minutes out of your busy schedule. My name is Isaac Yap, and today I'm going to show you how Singapore SMEs are getting professional AI-powered websites at up to 68% off using a government programme most people have never heard of.">
+<!-- 1. TITLE -->
+<div class="slide title-slide" data-notes="[0:00 – 1 min] Welcome everyone! Thank you for joining us on a Friday night. I'm Isaac Yap from IonicX AI, and tonight I'll show you how Singapore SMEs are getting professional AI-powered websites — and how a government scheme most people don't know about can cut your cost by 68%. Let's dive in.">
 <div class="center">
 <div class="logo">IonicX AI</div>
 <h1>AI Websites for<br>Singapore SMEs</h1>
 <h2>How to Save 68% with Government Tax Deductions</h2>
-<div class="byline">Isaac Yap · IonicX AI · 2026</div>
+<div class="byline">Isaac Yap · IonicX AI · Friday 20 Feb 2026, 9PM SGT</div>
 </div>
 </div>
 
-<!-- 2. Who Am I -->
-<div class="slide" data-notes="I spent years as a professional MMA referee — over 500 bouts including ONE Championship. That career taught me: when you see an opportunity, you act. In 2024 I saw the opportunity in AI. I taught myself to build with AI agents and today I run IonicX AI.">
+<!-- 2. WHO AM I -->
+<div class="slide" data-notes="[1:00 – 3 min] Quick intro. I'm not a typical tech founder. I spent years as a professional MMA referee — over 500 bouts including ONE Championship. That career taught me to make fast decisions under pressure and to spot opportunities. In 2024 I saw the AI wave coming and taught myself to build with AI agents. Now I help SG SMEs get online with AI-powered websites. I'm not a big agency. I'm a one-man operation who actually cares about your business.">
 <h1>Who Am I?</h1>
-<h2>And why should you listen to me?</h2>
+<h2>Not your typical tech guy — and that's the point</h2>
 <ul>
-<li>Isaac Yap — MMA referee turned AI developer</li>
-<li>500+ bouts officiated, including ONE Championship</li>
-<li>Now building AI-powered digital solutions for SG SMEs</li>
+<li><span class="accent">Isaac Yap</span> — MMA referee turned AI developer</li>
+<li><span class="cyan">500+ bouts</span> officiated, including ONE Championship</li>
+<li>Now building AI-powered websites for Singapore SMEs</li>
+<li>Not a typical tech guy — <span class="accent">that's the point</span></li>
 </ul>
 </div>
 
-<!-- 3. The Problem -->
-<div class="slide" data-notes="63% of consumers won't buy from a business without a website. For every 10 potential customers, 6 walk away. That's thousands of dollars lost every month. And your competitors with websites? They're picking up those customers.">
+<!-- 3. THE PROBLEM -->
+<div class="slide" data-notes="[3:00 – 5 min] Let's talk about the elephant in the room. 63% of consumers will NOT buy from a business without a website. That's 6 out of every 10 potential customers — gone. And think about this: it's 11pm, someone DMs you about your product. You're asleep. They move on. Your competitor with a website and chatbot? They just captured that lead. The market has shifted. If you don't have a professional online presence, you're leaving money on the table every single day.">
 <h1>The Problem Every SME Faces</h1>
 <ul>
-<li><span class="accent">63%</span> of consumers won't buy without a website</li>
-<li>You're losing leads at 11pm when nobody's answering</li>
+<li><span class="accent">63%</span> of customers won't buy without a website</li>
+<li>You're losing leads at <span class="cyan">11pm</span> when nobody's replying DMs</li>
+<li>Your competitors just upgraded — have you?</li>
 <li>No website = no credibility = no customers</li>
 </ul>
 </div>
 
-<!-- 4. Old Way vs New Way -->
-<div class="slide" data-notes="Traditional agency: $5-15K, 8-12 weeks, 2-3 revisions then extra fees. IonicX AI: $1,888-$3,888, 2-3 weeks, unlimited revisions during build, AI features built in from day one.">
-<h1>The Old Way vs The New Way</h1>
+<!-- 4. THE OLD WAY -->
+<div class="slide" data-notes="[5:00 – 7 min] So you think: okay, I need a website. You Google 'web design Singapore.' Here's what you find. Creativeans: $5,000 to $15,000. iCreationsLab: similar range. MediaPlus: $8,000+. And that's just the build. Want AI features? Extra. Want a chatbot? Extra. 8-12 weeks minimum. 2-3 revision rounds then they start charging. These are real published prices from real Singapore agencies. This is the old way.">
+<h1>The Old Way</h1>
+<h2>What traditional agencies charge in Singapore</h2>
 <div class="vs">
 <div class="col">
-<div style="color:rgba(255,255,255,.4);font-weight:700;margin-bottom:12px">❌ TRADITIONAL AGENCY</div>
+<div style="color:rgba(255,255,255,.4);font-weight:700;margin-bottom:12px">💸 TRADITIONAL AGENCIES</div>
 S$5,000 – $15,000<br>
 8–12 weeks delivery<br>
 2–3 revision rounds<br>
-AI features? Extra cost
+AI features? Extra cost<br>
+<div class="dim" style="margin-top:12px">Sources: Creativeans, iCreationsLab, MediaPlus</div>
 </div>
 <div class="divider"></div>
 <div class="col">
-<div style="color:#00ff88;font-weight:700;margin-bottom:12px">✅ IONICX AI</div>
-S$1,888 – $3,888<br>
-2–3 weeks delivery<br>
-Unlimited revisions<br>
-AI features built-in
+<div style="color:rgba(255,255,255,.35);font-weight:700;margin-bottom:12px">🕐 THE WAIT</div>
+Week 1–2: Discovery<br>
+Week 3–6: Design<br>
+Week 7–10: Development<br>
+Week 11–12: Testing<br>
+<div class="dim" style="margin-top:12px">…and that's if everything goes smoothly</div>
 </div>
 </div>
 </div>
 
-<!-- 5. Live Demo -->
-<div class="slide" data-notes="Switch to screen share. Show baker-demo.vercel.app — professional design, mobile responsive, online ordering, WhatsApp integration, AI chatbot. Built in under 2 weeks. A traditional agency would charge $8-12K for this.">
-<div class="center">
-<h1>Live Demo</h1>
-<div class="big">Let me show you.</div>
-<div class="dim">baker-demo.vercel.app</div>
-</div>
-</div>
-
-<!-- 6. How It Works -->
-<div class="slide" data-notes="AI agents handle design, development, and content simultaneously. No meetings, no queue, no delays. That's why we deliver in 2-3 weeks instead of 3 months.">
-<h1>How It Works</h1>
-<h2>AI agents build your site — not templates, not outsourced</h2>
-<div class="steps">
-<div class="step"><div class="num">1</div>Tell us about<br>your business</div>
-<div class="step"><div class="num">2</div>AI agents design<br>& build your site</div>
-<div class="step"><div class="num">3</div>Review, refine<br>& launch</div>
-</div>
-</div>
-
-<!-- 7. What You Get -->
-<div class="slide" data-notes="Every IonicX website comes with AI chatbot, lead capture, booking integration, SEO optimisation, and analytics. Not a static brochure — a business asset that works 24/7.">
-<h1>What You Get</h1>
+<!-- 5. THE NEW WAY -->
+<div class="slide" data-notes="[7:00 – 9 min] Now here's the new way. AI agents build your website. Not templates. Not outsourced overseas developers. AI agents that can design, code, and deploy in a fraction of the time. What took 3 months now takes 2 weeks. What cost $15K now costs a fraction. And I'm about to show you exactly what that looks like.">
+<h1>The New Way</h1>
+<h2>AI agents build your website</h2>
 <ul>
-<li>Custom AI-built website — mobile responsive</li>
-<li>AI chatbot that answers questions & captures leads 24/7</li>
-<li>Online booking + WhatsApp integration</li>
-<li>SEO optimisation + analytics dashboard</li>
+<li>What took <span class="cyan">3 months</span> now takes <span class="accent">2 weeks</span></li>
+<li>What cost <span class="cyan">$15,000</span> now costs a <span class="accent">fraction</span></li>
+<li>AI features <span class="accent">built-in</span> — not bolted on</li>
+<li>Live demo coming up… 👇</li>
 </ul>
 </div>
 
-<!-- 8. Pricing -->
-<div class="slide" data-notes="Three packages for different stages. Starter for freelancers and home businesses. Growth is our most popular — full multi-page site with booking and CRM. Enterprise for custom applications. All qualify for EIS 400% tax deduction.">
+<!-- 6. LIVE DEMO -->
+<div class="slide" data-notes="[9:00 – 14 min] Switch to screen share now. Show 2-3 demo sites. Walk through the design, mobile responsiveness, booking system, AI chatbot. Point out specific features. This is the wow moment — let the sites speak for themselves. Take about 5 minutes here.">
+<div class="center">
+<h1>Live Demo</h1>
+<div class="big">Let me show you<br>what AI can build.</div>
+<div class="dim">Screen share — demo sites incoming</div>
+</div>
+</div>
+
+<!-- 7. WHAT YOU GET -->
+<div class="slide" data-notes="[14:00 – 16 min] So what exactly do you get with IonicX? Everything you saw in the demo — and more. Custom website, AI chatbot that works 24/7 in multiple languages, booking system, SEO optimisation, analytics, mobile responsive. Everything included. No surprise add-ons. No 'that's extra' conversations.">
+<h1>What You Get</h1>
+<h2>Everything included. No surprise add-ons.</h2>
+<div class="features">
+<div class="feat"><span class="icon">🌐</span> Custom AI-built website</div>
+<div class="feat"><span class="icon">🤖</span> AI chatbot — 24/7, multilingual</div>
+<div class="feat"><span class="icon">📅</span> Booking & scheduling system</div>
+<div class="feat"><span class="icon">🔍</span> SEO optimisation</div>
+<div class="feat"><span class="icon">📊</span> Analytics dashboard</div>
+<div class="feat"><span class="icon">📱</span> Mobile responsive</div>
+</div>
+</div>
+
+<!-- 8. AI CHATBOT DEMO -->
+<div class="slide" data-notes="[16:00 – 20 min] Let me zoom in on the AI chatbot because this is the game-changer. Your chatbot handles bookings, answers FAQs, recommends products — all automatically. It works at 3AM. It speaks English, Chinese, and Malay. Go to ionicx.ai right now and chat with Robin — that's our AI assistant. Try asking it anything. This is what your customers will experience.">
+<div class="center">
+<h1>AI Chatbot Demo</h1>
+<div class="big" style="font-size:3.5rem">Your 24/7 Sales Assistant</div>
+<ul style="text-align:left;max-width:700px">
+<li>Handles bookings, FAQs, product recommendations</li>
+<li>Works at <span class="accent">3AM</span> while you sleep</li>
+<li>Speaks <span class="cyan">English, Chinese, Malay</span></li>
+<li>Try it now: chat with <span class="accent">Robin</span> on <span class="cyan">ionicx.ai</span></li>
+</ul>
+</div>
+</div>
+
+<!-- 9. CASE STUDIES -->
+<div class="slide" data-notes="[20:00 – 23 min] Let me show you real examples. Pocolane Bakery — went from Instagram DMs to a full ordering site with AI chatbot. Fitness Studio — automated their booking, cut admin time dramatically. Medical Clinic — AI triage system, smart appointments. All built by AI agents in under 2 weeks. These aren't hypotheticals — these are real sites you can visit.">
+<h1>Case Studies</h1>
+<h2>Built by AI agents. Delivered in under 2 weeks.</h2>
+<ul>
+<li><span class="accent">Pocolane Bakery</span> — Full ordering site + AI chatbot</li>
+<li><span class="accent">Fitness Studio</span> — Automated booking & scheduling</li>
+<li><span class="accent">Medical Clinic</span> — AI triage + smart appointments</li>
+</ul>
+<div class="dim" style="margin-top:24px">All demo sites available for viewing during Q&A</div>
+</div>
+
+<!-- 10. BUDGET 2026: EIS -->
+<div class="slide" data-notes="[23:00 – 27 min] Now before I show you pricing, I want to tell you about something most SME owners have NEVER heard of. It's called the Enterprise Innovation Scheme — EIS. Budget 2026 extended this. Here's what it means: if you spend money on AI and digital services, you get a 400% tax deduction. Not 100%. Not 200%. FOUR HUNDRED PERCENT. Cap is $50K per year. And here's the best part: no application needed. You just claim it during tax filing. Any Singapore-registered business qualifies. This is going to change the math completely — remember this slide.">
+<h1>Budget 2026: EIS</h1>
+<h2>The tax deduction nobody knows about 🤫</h2>
+<div class="eis-box">
+<ul>
+<li><span class="accent">Enterprise Innovation Scheme</span> — extended in Budget 2026</li>
+<li><span class="accent">400%</span> tax deduction on AI & digital services</li>
+<li>Assessment Years <span class="cyan">2027–2028</span></li>
+<li>Cap: <span class="cyan">S$50,000</span> per year</li>
+<li><span class="accent">No application needed</span> — just claim during tax filing</li>
+<li>Any Singapore-registered business qualifies</li>
+</ul>
+</div>
+</div>
+
+<!-- 11. PSG & EDG -->
+<div class="slide" data-notes="[27:00 – 29 min] And EIS isn't the only option. There's also PSG — Productivity Solutions Grant — up to 50% co-funding, though you need a pre-approved vendor. And EDG — Enterprise Development Grant — up to 70% co-funding for SMEs, starting April 2026. Multiple pathways to subsidize your investment. But EIS is the easiest — no application, no approval, just claim it. Keep that in mind.">
+<h1>PSG & EDG</h1>
+<h2>Additional pathways to subsidize your investment</h2>
+<ul>
+<li><span class="accent">PSG</span> — 50% co-funding (need pre-approved vendor)</li>
+<li><span class="accent">EDG</span> — 70% co-funding for SMEs (from April 2026)</li>
+<li>Multiple pathways — the government wants you to go digital</li>
+</ul>
+<div class="dim" style="margin-top:24px">EIS is the easiest: no application, no approval process</div>
+</div>
+
+<!-- 12. NOW... THE PRICE -->
+<div class="slide" data-notes="[29:00 – 30 min] Pause here. Build the tension. 'So… you've seen the demo. You've seen the case studies. You know about the government schemes. Now the question everyone's been waiting for…' Let this hang for 2-3 seconds before advancing.">
+<div class="center">
+<div class="buildup">
+You've seen what AI can build.<br>
+You know about the 400% tax deduction.<br><br>
+</div>
+<h1 style="font-size:4.5rem">So how much<br>does all this cost?</h1>
+</div>
+</div>
+
+<!-- 13. PRICING REVEAL -->
+<div class="slide" data-notes="[30:00 – 33 min] Here are the packages. Starter: $1,888 — landing page with AI chatbot. Growth: $3,888 — our most popular, full multi-page site with booking, CRM, advanced chatbot. Enterprise: $8,888+ — custom web applications. Compare this to the $5,000-$15,000 from traditional agencies. Already 60-75% cheaper. But wait — remember the EIS slide? Let me show you what happens next.">
 <h1>Choose Your Package</h1>
 <div class="pricing">
 <div class="tier">
@@ -176,124 +251,86 @@ AI features built-in
 </ul>
 </div>
 </div>
+<div class="dim" style="margin-top:24px;text-align:center">Already 60–75% cheaper than traditional agencies</div>
 </div>
 
-<!-- 9. Budget 2026 EIS -->
-<div class="slide" data-notes="Budget 2026 expanded the Enterprise Innovation Scheme. 400% tax deduction on qualifying AI expenditure, capped at $50K per year. IonicX packages are designed to qualify. Let's do the math with the Growth package.">
-<h1>Budget 2026: Enterprise Innovation Scheme</h1>
-<h2>The tax deduction nobody knows about</h2>
+<!-- 14. THE MATH — MIC DROP -->
+<div class="slide" data-notes="[33:00 – 36 min] THIS IS THE MIC DROP MOMENT. Go slow. Read each line. 'Growth Package: $3,888. Now apply the EIS 400% deduction…' pause. '$3,888 times 4 = $15,552 in deductible expenses.' pause. 'At 17% corporate tax rate, that's $2,644 in tax savings.' BIG PAUSE. 'Your effective cost… $1,244. That's 68% off. A full AI-powered website with chatbot — for one thousand, two hundred, and forty-four dollars.' Let that sink in. Drop the mic.">
+<h1>Let's Do The Math 🎤</h1>
 <div class="math">
 Growth Package: <span class="cyan">S$3,888</span><br>
-400% EIS Deduction: S$3,888 × 4 = <span class="cyan">S$15,552</span><br>
+EIS 400% Deduction: S$3,888 × 4 = <span class="cyan">S$15,552</span><br>
 Tax Savings (17% CIT): S$15,552 × 17% = <span class="cyan">S$2,644</span><br>
-<div class="result">Effective cost: S$1,244 — that's 68% off</div>
+<div class="result">Effective cost: S$1,244 — that's 68% off 🎤</div>
 </div>
-</div>
-
-<!-- 10. PSG & EDG -->
-<div class="slide" data-notes="Beyond EIS, there's PSG with up to 50% co-funding for pre-approved IT solutions — PSG is expanding to cover AI in 2H 2026. And EDG now offers up to 70% co-funding for SMEs from April 2026. These can potentially stack with EIS for even greater savings.">
-<h1>More Government Support</h1>
-<h2>PSG & EDG — additional co-funding options</h2>
-<ul>
-<li><span class="accent">PSG</span> — Up to 50% co-funding, expanding to AI solutions (2H 2026)</li>
-<li><span class="accent">EDG</span> — Up to 70% for SMEs (April 2026 – March 2029)</li>
-<li>The government wants you to go digital with AI</li>
-</ul>
+<div class="dim" style="margin-top:16px">A full AI-powered website with chatbot for S$1,244.</div>
 </div>
 
-<!-- 11. Case Studies -->
-<div class="slide" data-notes="Real Singapore businesses. Pocolane bakery — from Instagram orders to full ordering site with AI chatbot. Fitness studio — from manual DM bookings to automated scheduling. Clinic — from phone bookings to AI triage and smart appointments.">
-<h1>Real Results, Real Businesses</h1>
-<ul>
-<li><span class="accent">Home Baker</span> — Full ordering site + AI chatbot, average order value ↑</li>
-<li><span class="accent">Stretch Therapy</span> — Online booking, 2hrs admin → 15 mins/day</li>
-<li><span class="accent">Tattoo Artist</span> — Portfolio site + AI style quiz, filters out time-wasters</li>
-</ul>
-</div>
-
-<!-- 12. AI Chatbot Demo -->
-<div class="slide" data-notes="Switch to screen share — show Robin chatbot on ionicx.ai. Demo: ask about pricing, ask about bakery services. Show how it captures leads and offers to book consultations. Customer at 11pm gets instant answers while you sleep.">
-<div class="center">
-<h1>AI Chatbot Demo</h1>
-<div class="big">Your 24/7 Sales Assistant</div>
-<ul style="text-align:left;max-width:700px">
-<li>Answers customer questions instantly</li>
-<li>Captures leads automatically</li>
-<li>Books appointments while you sleep</li>
-</ul>
-</div>
-</div>
-
-<!-- 13. The IonicX Difference -->
-<div class="slide" data-notes="Five reasons: AI agents not templates, EIS-qualifying by design, 2-3 week delivery, ongoing support included, Singapore-based — we understand the local market.">
+<!-- 15. THE IONICX DIFFERENCE -->
+<div class="slide" data-notes="[36:00 – 38 min] Let me recap why IonicX is different. Speed: 2 weeks, not 3 months. AI-powered: not templates, real AI agents building your site. Government-subsidized: designed to qualify for EIS. Ongoing support: we don't disappear after launch. And your code, your domain — you own everything.">
 <h1>The IonicX Difference</h1>
 <ul>
-<li><span class="accent">Speed</span> — 2–3 weeks, not 2–3 months</li>
-<li><span class="accent">AI-Powered</span> — Built by AI agents, not templates</li>
-<li><span class="accent">Government-Subsidized</span> — Designed to qualify for EIS (68% off)</li>
-<li><span class="accent">Local</span> — Singapore-based, we understand your market</li>
+<li><span class="accent">Speed</span> — 2 weeks, not 3 months</li>
+<li><span class="accent">AI-Powered</span> — built by AI agents, not templates</li>
+<li><span class="accent">Government-Subsidized</span> — EIS 400% deduction</li>
+<li><span class="accent">Ongoing Support</span> — we don't disappear after launch</li>
+<li><span class="accent">You Own It</span> — your code, your domain</li>
 </ul>
 </div>
 
-<!-- 14. Social Proof -->
-<div class="slide" data-notes="From MMA referee to AI developer — that journey is the story. When you see an opportunity, you act. I built IonicX because I saw that SMEs were being overcharged and underserved. The combination of AI speed, quality, and government subsidies makes this a no-brainer.">
-<h1>From the Cage to Code</h1>
-<h2>MMA referee → AI entrepreneur</h2>
+<!-- 16. MY STORY -->
+<div class="slide" data-notes="[38:00 – 40 min] Quick personal note. I went from MMA referee to AI developer. I built IonicX because I believe SMEs deserve enterprise-quality tools at SME prices. I'm not funded by VCs. This is bootstrapped. Every single client matters to me personally. When you work with IonicX, you work with me directly.">
+<h1>My Story</h1>
+<h2>From the cage to code</h2>
 <ul>
-<li>"When you see an opportunity, you don't hesitate. You act."</li>
-<li>Built IonicX because SMEs deserve better than $10K agencies</li>
-<li>AI + government support = once-in-a-generation opportunity</li>
+<li>MMA referee → AI developer</li>
+<li>Built IonicX because SMEs deserve <span class="accent">enterprise tools at SME prices</span></li>
+<li>Not funded by VCs. <span class="cyan">Bootstrapped.</span></li>
+<li>Every client matters — you work with <span class="accent">me</span> directly</li>
 </ul>
 </div>
 
-<!-- 15. Q&A -->
-<div class="slide qa" data-notes="Open Q&A. Answer 4-6 questions from chat. If you don't get to a question, offer to answer during the free consultation. Paste ionicx.ai/book in chat.">
+<!-- 17. Q&A -->
+<div class="slide qa" data-notes="[40:00 – 44 min] Open Q&A. Take 4-6 questions from chat. If questions slow down, prompt: 'Any questions about the EIS scheme? The chatbot? The timeline?' If you don't get to a question, offer to answer during the free consultation.">
 <div class="center">
 <h1>Q&A</h1>
-<h2>Drop your questions in the chat!</h2>
+<h2>Drop your questions in the chat! 💬</h2>
 </div>
 </div>
 
-<!-- 16. Special Offer -->
-<div class="slide" data-notes="Exclusive webinar bonus: book a free 15-min consultation within 48 hours and get a FREE AI chatbot setup worth $500. No catch, no obligation. Even if you don't go with IonicX, you keep the chatbot.">
-<h1>🎁 Webinar-Only Bonus</h1>
+<!-- 18. SPECIAL OFFER -->
+<div class="slide" data-notes="[44:00 – 45 min] Urgency time. 'For everyone on this webinar tonight — and ONLY tonight — if you book a consultation THIS WEEK, I'll throw in a FREE AI chatbot setup worth $500. That's on top of the EIS savings. This offer is only for webinar attendees. I won't be posting this anywhere else.'">
+<h1>🎁 Tonight Only</h1>
+<h2>Exclusive for webinar attendees</h2>
 <ul>
-<li>Book a free consultation within <span class="accent">48 hours</span></li>
-<li>Get a <span class="accent">FREE AI chatbot</span> setup (worth S$500)</li>
-<li>No catch. No obligation. You keep it either way.</li>
+<li>Book a consultation <span class="accent">this week</span></li>
+<li>Get a <span class="accent">FREE AI chatbot setup</span> worth S$500</li>
+<li>Only for tonight's attendees — not available anywhere else</li>
 </ul>
 </div>
 
-<!-- 17. How to Get Started -->
-<div class="slide" data-notes="Three simple steps. Book a free 15-minute call. We build your AI-powered site. You launch and start getting leads. The link is ionicx.ai/book.">
+<!-- 19. HOW TO GET STARTED -->
+<div class="slide" data-notes="[45:00 – 46 min] Three simple steps. Step 1: Book a free consultation at ionicx.ai. Step 2: We build your AI-powered site in 2 weeks. Step 3: You launch and grow. Drop the link in chat now.">
 <h1>How to Get Started</h1>
 <div class="steps">
-<div class="step"><div class="num">1</div><strong>Book a Call</strong><br>Free 15-min consultation</div>
-<div class="step"><div class="num">2</div><strong>We Build</strong><br>AI agents create your site</div>
-<div class="step"><div class="num">3</div><strong>You Launch</strong><br>Go live & get leads</div>
+<div class="step"><div class="num">1</div><strong>Book a Call</strong><br>Free consultation<br><span class="cyan">ionicx.ai</span></div>
+<div class="step"><div class="num">2</div><strong>We Build</strong><br>AI agents create<br>your site in 2 weeks</div>
+<div class="step"><div class="num">3</div><strong>You Launch</strong><br>Go live & grow<br>your business</div>
 </div>
 </div>
 
-<!-- 18. Contact / CTA -->
-<div class="slide" data-notes="Paste ionicx.ai/book in the chat. Show QR code if available. The link, the QR code — 30 seconds of your time. Free consultation, free chatbot if you book within 48 hours, up to 68% off with EIS.">
-<div class="center">
-<h1>Book Your Free Consultation</h1>
-<div class="big" style="font-size:3.5rem">ionicx.ai/book</div>
-<ul style="text-align:left;max-width:700px;margin-top:24px">
-<li>🌐 ionicx.ai</li>
-<li>📧 hello@ionicx.ai</li>
-<li>💬 WhatsApp: ionicx.ai/whatsapp</li>
-</ul>
-</div>
-</div>
-
-<!-- 19. Thank You -->
-<div class="slide title-slide" data-notes="Thank you for spending 45 minutes with me. Whether you book today or keep this in mind for later — the future of small business is AI-powered, and Singapore is leading the way. I'm Isaac Yap from IonicX AI. Have a great evening!">
+<!-- 20. THANK YOU -->
+<div class="slide title-slide" data-notes="[46:00 – end] 'Thank you for spending your Friday night with me. Whether you book today or think about it — the future of small business is AI-powered, and Singapore's government is literally paying you to adopt it. Don't sleep on EIS. I'm Isaac Yap from IonicX AI. Have a great evening, and I'll see you online.' Drop all contact info in chat.">
 <div class="center">
 <div class="logo">IonicX AI</div>
 <h1>Thank You!</h1>
 <h2>Isaac Yap · IonicX AI</h2>
-<div style="color:rgba(255,255,255,.4);font-size:1.1rem;margin-top:24px">ionicx.ai · hello@ionicx.ai · @ionicx.ai</div>
+<div style="color:rgba(255,255,255,.5);font-size:1.2rem;margin-top:24px;line-height:2">
+🌐 ionicx.ai<br>
+💬 WhatsApp: 80268821<br>
+📧 isaac@isaacyap.ai<br>
+📸 @isaacyap.ai
+</div>
 </div>
 </div>
 
