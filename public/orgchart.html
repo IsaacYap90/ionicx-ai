@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IonicX AI — Organization Chart</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem}
+.logo{font-size:2.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:.5rem}
+.logo span{background:linear-gradient(135deg,#00d4ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:#888;font-size:.9rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:3rem}
+.chart{display:flex;flex-direction:column;align-items:center;gap:0}
+
+/* Connector lines */
+.connector{width:2px;height:40px;background:linear-gradient(180deg,#00d4ff,#00d4ff88)}
+.branch{display:flex;align-items:flex-start;justify-content:center;position:relative}
+.branch::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:2px;height:20px;background:#00d4ff88}
+.branch-line{position:relative;display:flex;justify-content:center;width:100%}
+.branch-line::before{content:'';position:absolute;top:0;height:2px;background:#00d4ff44;left:12.5%;right:12.5%}
+
+/* Cards */
+.card{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.25rem 1.5rem;background:#111;border:1px solid #222;border-radius:16px;min-width:140px;position:relative;transition:transform .2s}
+.card:hover{transform:translateY(-2px)}
+.card.ceo{border-color:rgba(255,215,0,.4);box-shadow:0 0 30px rgba(255,215,0,.1)}
+.card.caio{border-color:rgba(0,212,255,.4);box-shadow:0 0 30px rgba(0,212,255,.1)}
+.card .avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700}
+.card .name{font-weight:700;font-size:1rem}
+.card .role{color:#888;font-size:.8rem;text-align:center}
+.card .badge{font-size:.65rem;padding:.15rem .5rem;border-radius:100px;font-weight:600;margin-top:.25rem}
+
+/* Specific avatars */
+.av-ceo{background:linear-gradient(135deg,#ffd700,#ff8c00);color:#000}
+.av-bruce{background:linear-gradient(135deg,#1a1a2e,#333);color:#00d4ff;border:2px solid #00d4ff}
+.av-night{background:linear-gradient(135deg,#1a1a2e,#0066cc);color:#00d4ff;border:2px solid #0088ff}
+.av-oracle{background:linear-gradient(135deg,#2d1b4e,#6a5acd);color:#bf7fff;border:2px solid #9370db}
+.av-robin{background:linear-gradient(135deg,#0d2e1b,#1a6b4a);color:#00ff88;border:2px solid #00ff88}
+.av-redhood{background:linear-gradient(135deg,#2e0d0d,#8b0000);color:#ff4444;border:2px solid #dc3545}
+
+.badge-human{background:rgba(255,215,0,.15);color:#ffd700;border:1px solid rgba(255,215,0,.3)}
+.badge-ai{background:rgba(0,212,255,.15);color:#00d4ff;border:1px solid rgba(0,212,255,.3)}
+
+/* Agent row */
+.agents{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:20px;position:relative}
+.agents::before{content:'';position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:2px;height:20px;background:#00d4ff44}
+.agents::after{content:'';position:absolute;top:-20px;height:2px;background:#00d4ff33;left:calc(12.5% + 70px);right:calc(12.5% + 70px)}
+
+/* Agent connectors */
+.agent-wrap{display:flex;flex-direction:column;align-items:center}
+.agent-connector{width:2px;height:20px;background:#00d4ff33}
+
+.footer{margin-top:3rem;color:#555;font-size:.75rem;text-align:center}
+
+@media(max-width:700px){
+.agents{grid-template-columns:repeat(2,1fr);gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<div class="logo"><span>IonicX AI</span></div>
+<div class="subtitle">Organization Structure</div>
+
+<div class="chart">
+<!-- CEO -->
+<div class="card ceo">
+<div class="avatar av-ceo">IY</div>
+<div class="name">Isaac Yap</div>
+<div class="role">Founder & CEO</div>
+<div class="badge badge-human">👤 Human</div>
+</div>
+
+<div class="connector"></div>
+
+<!-- Chief AI Officer -->
+<div class="card caio">
+<div class="avatar av-bruce">🦇</div>
+<div class="name">Bruce Wayne</div>
+<div class="role">Chief AI Officer</div>
+<div class="badge badge-ai">🤖 AI Agent · Claude Opus 4.6</div>
+</div>
+
+<div class="connector" style="height:30px"></div>
+
+<!-- Sub-agents -->
+<div class="agents">
+<div class="agent-wrap">
+<div class="agent-connector"></div>
+<div class="card">
+<div class="avatar av-night">N</div>
+<div class="name">Nightwing</div>
+<div class="role">Lead Developer</div>
+<div class="badge badge-ai">🤖 Opus 4.6</div>
+</div>
+</div>
+
+<div class="agent-wrap">
+<div class="agent-connector"></div>
+<div class="card">
+<div class="avatar av-oracle">O</div>
+<div class="name">Oracle</div>
+<div class="role">UI/UX & Design</div>
+<div class="badge badge-ai">🤖 Sonnet 4.6</div>
+</div>
+</div>
+
+<div class="agent-wrap">
+<div class="agent-connector"></div>
+<div class="card">
+<div class="avatar av-robin">R</div>
+<div class="name">Robin</div>
+<div class="role">Research & Content</div>
+<div class="badge badge-ai">🤖 Sonnet 4.6</div>
+</div>
+</div>
+
+<div class="agent-wrap">
+<div class="agent-connector"></div>
+<div class="card">
+<div class="avatar av-redhood">RH</div>
+<div class="name">Red Hood</div>
+<div class="role">Security & QA</div>
+<div class="badge badge-ai">🤖 Sonnet 4.6</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p>1 Human · 5 AI Agents · Powered by OpenClaw + Anthropic Claude</p>
+<p style="margin-top:.25rem">© 2026 IonicX AI</p>
+</div>
+
+</body>
+</html>
