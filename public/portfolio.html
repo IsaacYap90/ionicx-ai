@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IonicX AI — Company Portfolio 2026</title>
+<meta name="description" content="AI-Powered Websites for Singapore SMEs. Starting S$2,888.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--cyan:#00d4ff;--green:#00ff88;--bg:#0a0a0a;--card:#111;--text:#e0e0e0;--muted:#888}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+section{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:3rem 1.5rem;position:relative}
+.container{max-width:900px;margin:0 auto;width:100%}
+h1{font-size:clamp(2.5rem,8vw,5rem);font-weight:800;letter-spacing:-0.03em;line-height:1.1}
+h2{font-size:clamp(1.8rem,5vw,3rem);font-weight:700;margin-bottom:1.5rem;letter-spacing:-0.02em}
+.gradient-text{background:linear-gradient(135deg,var(--cyan),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.tag{display:inline-block;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--cyan);padding:.25rem .75rem;border-radius:100px;font-size:.8rem;font-weight:600}
+
+/* Cover */
+#cover{text-align:center;background:radial-gradient(ellipse at 30% 50%,rgba(0,212,255,.08),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(0,255,136,.06),transparent 60%)}
+#cover .sub{font-size:clamp(1rem,3vw,1.4rem);color:var(--muted);margin:.75rem 0 2rem}
+#cover .year{font-size:1rem;color:var(--muted);letter-spacing:.2em;text-transform:uppercase}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--muted);font-size:.85rem;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* Stats */
+.stat-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin:2rem 0}
+.stat{background:var(--card);border-radius:16px;padding:2rem;border:1px solid #222}
+.stat .num{font-size:clamp(2rem,6vw,3.5rem);font-weight:800;color:var(--cyan);line-height:1.1}
+.stat .label{color:var(--muted);margin-top:.5rem;font-size:.95rem}
+.stat .source{font-size:.75rem;color:#555;margin-top:.25rem}
+
+/* Solution cards */
+.solution-grid{display:grid;gap:1.5rem;margin:2rem 0}
+.sol-card{background:var(--card);border-radius:16px;padding:2rem;border:1px solid #222;display:flex;gap:1.25rem;align-items:flex-start}
+.sol-card .icon{font-size:2rem;flex-shrink:0}
+.sol-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.25rem}
+.sol-card p{color:var(--muted);font-size:.9rem}
+.one-liner{font-size:1.1rem;color:var(--muted);margin-top:1.5rem;font-style:italic}
+
+/* Steps */
+.steps{display:grid;gap:1.5rem;margin:2rem 0}
+.step{background:var(--card);border-radius:16px;padding:2rem;border:1px solid #222;position:relative}
+.step-num{position:absolute;top:-12px;left:20px;background:linear-gradient(135deg,var(--cyan),var(--green));color:#000;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}
+.step .icon{font-size:1.5rem;margin-bottom:.5rem}
+.step h3{font-size:1.05rem;font-weight:700}
+.step p{color:var(--muted);font-size:.9rem;margin-top:.25rem}
+
+/* Features */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+.feat{background:var(--card);border-radius:12px;padding:1.25rem;border:1px solid #222;text-align:center}
+.feat .icon{font-size:1.5rem;margin-bottom:.5rem}
+.feat h3{font-size:.85rem;font-weight:600}
+.feat-note{text-align:center;color:var(--green);font-weight:600;margin-top:1rem}
+
+/* Portfolio */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+.work-card{border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;min-height:180px;display:flex;flex-direction:column;justify-content:flex-end}
+.work-card h3{font-size:1rem;font-weight:700;color:#fff}
+.work-card .type{font-size:.8rem;color:rgba(255,255,255,.7);margin-top:.15rem}
+.work-card .feat-tag{font-size:.7rem;background:rgba(0,0,0,.5);color:var(--green);padding:.2rem .5rem;border-radius:6px;display:inline-block;margin-top:.5rem}
+.work-card .badge{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.6);color:var(--cyan);font-size:.65rem;padding:.2rem .5rem;border-radius:6px;font-weight:600}
+.wc1{background:linear-gradient(135deg,#4a1942,#c74b50)}
+.wc2{background:linear-gradient(135deg,#1a1a2e,#e94560)}
+.wc3{background:linear-gradient(135deg,#0d2137,#1a6b4a)}
+.wc4{background:linear-gradient(135deg,#1b1464,#6a5acd)}
+.wc5{background:linear-gradient(135deg,#134e4a,#2dd4bf)}
+.wc6{background:linear-gradient(135deg,#78350f,#d97706)}
+
+/* Pricing */
+.price-grid{display:grid;gap:1.25rem;margin:2rem 0}
+.price-card{background:var(--card);border-radius:16px;padding:2rem;border:1px solid #222;position:relative}
+.price-card.popular{border-color:var(--cyan);box-shadow:0 0 30px rgba(0,212,255,.15)}
+.popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--cyan),var(--green));color:#000;padding:.25rem 1rem;border-radius:100px;font-size:.75rem;font-weight:700;white-space:nowrap}
+.price-card .tier{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.price-card .price{font-size:2rem;font-weight:800;margin:.5rem 0}
+.price-card .maint{font-size:.85rem;color:var(--muted)}
+.price-card ul{list-style:none;margin-top:1rem}
+.price-card li{padding:.3rem 0;font-size:.9rem;color:var(--text)}
+.price-card li::before{content:"✓ ";color:var(--green);font-weight:700}
+
+/* EIS */
+.eis-math{background:var(--card);border-radius:16px;padding:2rem;border:1px solid #222;margin:2rem 0}
+.eis-row{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid #1a1a1a;font-size:.95rem}
+.eis-row:last-child{border:none}
+.eis-row .val{font-weight:700;color:var(--cyan);font-size:1.1rem}
+.eis-result{text-align:center;margin-top:1.5rem}
+.eis-result .big{font-size:clamp(2rem,6vw,3rem);font-weight:800;color:var(--green)}
+.eis-note{text-align:center;color:var(--muted);font-size:.8rem;margin-top:1rem}
+.urgency{text-align:center;color:#ff6b6b;font-weight:600;margin-top:.75rem;font-size:.95rem}
+
+/* Founder */
+.founder-grid{display:grid;gap:2rem;margin:2rem 0}
+.founder-photo{background:linear-gradient(135deg,var(--cyan),var(--green));border-radius:16px;min-height:250px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#000}
+.founder-bio blockquote{font-style:italic;color:var(--cyan);margin:1rem 0;padding-left:1rem;border-left:3px solid var(--cyan);font-size:1rem}
+.badges{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.badges .tag{background:rgba(0,255,136,.1);border-color:rgba(0,255,136,.3);color:var(--green)}
+
+/* Contact */
+#contact{text-align:center}
+.contact-links{margin:2rem 0;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.contact-links a{color:var(--text);text-decoration:none;font-size:1.1rem;display:flex;align-items:center;gap:.5rem}
+.contact-links a:hover{color:var(--cyan)}
+.cta{display:inline-block;background:linear-gradient(135deg,var(--cyan),var(--green));color:#000;font-weight:700;font-size:1.1rem;padding:1rem 2.5rem;border-radius:100px;text-decoration:none;margin:1rem 0;transition:transform .2s}
+.cta:hover{transform:scale(1.05)}
+.copy{color:#555;font-size:.8rem;margin-top:2rem}
+
+/* Desktop */
+@media(min-width:768px){
+.stat-grid{grid-template-columns:repeat(3,1fr)}
+.feat-grid{grid-template-columns:repeat(3,1fr)}
+.work-grid{grid-template-columns:repeat(3,1fr)}
+.price-grid{grid-template-columns:repeat(3,1fr)}
+.founder-grid{grid-template-columns:1fr 1.5fr;align-items:center}
+section{padding:4rem 2rem}
+}
+
+/* Print */
+@media print{
+html{scroll-snap-type:none}
+body{background:#fff;color:#000}
+section{min-height:auto;page-break-after:always;padding:2rem}
+.fade-in{opacity:1!important;transform:none!important}
+h1,h2,.gradient-text{-webkit-text-fill-color:#000;color:#000;background:none}
+.stat,.sol-card,.step,.feat,.work-card,.price-card,.eis-math{background:#f5f5f5;border-color:#ddd}
+.stat .num,.eis-row .val{color:#0077aa}
+.scroll-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<section id="cover">
+<div class="container fade-in">
+<h1 class="gradient-text">IonicX AI</h1>
+<p class="sub">AI-Powered Websites for Singapore SMEs</p>
+<p class="year">Company Portfolio 2026</p>
+</div>
+<div class="scroll-hint">Scroll ↓</div>
+</section>
+
+<section id="problem">
+<div class="container">
+<h2 class="fade-in">Singapore SMEs Deserve Better</h2>
+<div class="stat-grid">
+<div class="stat fade-in"><div class="num">$5K–$15K</div><div class="label">Typical agency cost for a basic website</div></div>
+<div class="stat fade-in"><div class="num">3–6 months</div><div class="label">Average delivery time</div></div>
+<div class="stat fade-in"><div class="num">72%</div><div class="label">of SG SMEs lack a proper website</div><div class="source">Source: IMDA</div></div>
+</div>
+<p class="fade-in" style="color:var(--muted);max-width:600px">Traditional agencies overcharge, underdeliver, and leave SMEs with static sites that don't work for them.</p>
+</div>
+</section>
+
+<section id="solution">
+<div class="container">
+<h2 class="fade-in gradient-text">AI Changes Everything</h2>
+<div class="solution-grid">
+<div class="sol-card fade-in"><div class="icon">⚡</div><div><h3>14-Day Delivery</h3><p>Not 3 months. Your site goes live in two weeks.</p></div></div>
+<div class="sol-card fade-in"><div class="icon">💰</div><div><h3>Starting S$2,888</h3><p>Not $15,000. Premium quality at SME-friendly prices.</p></div></div>
+<div class="sol-card fade-in"><div class="icon">🤖</div><div><h3>AI Built-In</h3><p>Chatbot, automation, and SEO — all included from day one.</p></div></div>
+</div>
+<p class="one-liner fade-in">"We use AI agents to design, build, and deploy your website — faster, smarter, cheaper."</p>
+</div>
+</section>
+
+<section id="how">
+<div class="container">
+<h2 class="fade-in">How It Works</h2>
+<div class="steps">
+<div class="step fade-in"><div class="step-num">1</div><div class="icon">📋</div><h3>Tell Us About Your Business</h3><p>Quick questionnaire about your needs, goals, and style preferences.</p></div>
+<div class="step fade-in"><div class="step-num">2</div><div class="icon">⚙️</div><h3>AI Agents Build Your Site</h3><p>Our AI designs, codes, and tests your website in 14 days.</p></div>
+<div class="step fade-in"><div class="step-num">3</div><div class="icon">🚀</div><h3>Launch & Grow</h3><p>Go live with ongoing AI support and maintenance.</p></div>
+</div>
+</div>
+</section>
+
+<section id="included">
+<div class="container">
+<h2 class="fade-in">What's Included</h2>
+<div class="feat-grid">
+<div class="feat fade-in"><div class="icon">🌐</div><h3>Custom AI-Built Website</h3></div>
+<div class="feat fade-in"><div class="icon">🤖</div><h3>AI Chatbot (24/7, Multilingual)</h3></div>
+<div class="feat fade-in"><div class="icon">📅</div><h3>Booking & Scheduling</h3></div>
+<div class="feat fade-in"><div class="icon">🔍</div><h3>SEO Optimisation</h3></div>
+<div class="feat fade-in"><div class="icon">📱</div><h3>Mobile Responsive</h3></div>
+<div class="feat fade-in"><div class="icon">📊</div><h3>Analytics Dashboard</h3></div>
+<div class="feat fade-in"><div class="icon">🛡️</div><h3>SSL & Security</h3></div>
+<div class="feat fade-in"><div class="icon">🔧</div><h3>Ongoing Maintenance</h3></div>
+</div>
+<p class="feat-note fade-in">Everything included. No surprise add-ons.</p>
+</div>
+</section>
+
+<section id="work">
+<div class="container">
+<h2 class="fade-in">Built by AI. Designed for Humans.</h2>
+<div class="work-grid">
+<div class="work-card wc1 fade-in"><div class="badge">Built in 5 days</div><h3>Pocolane Bakery</h3><div class="type">E-commerce</div><div class="feat-tag">AI Gift Finder</div></div>
+<div class="work-card wc2 fade-in"><div class="badge">Built in 5 days</div><h3>TattByLyds</h3><div class="type">Tattoo Studio</div><div class="feat-tag">AI Style Matcher</div></div>
+<div class="work-card wc3 fade-in"><div class="badge">Built in 5 days</div><h3>JMT Muay Thai</h3><div class="type">Gym & Fitness</div><div class="feat-tag">Class Booking</div></div>
+<div class="work-card wc4 fade-in"><div class="badge">Built in 5 days</div><h3>Luxe Realty</h3><div class="type">Real Estate</div><div class="feat-tag">Property Search AI</div></div>
+<div class="work-card wc5 fade-in"><div class="badge">Built in 5 days</div><h3>Wellness Haven</h3><div class="type">Spa & Wellness</div><div class="feat-tag">Appointment System</div></div>
+<div class="work-card wc6 fade-in"><div class="badge">Built in 5 days</div><h3>Heritage Kopitiam</h3><div class="type">F&B</div><div class="feat-tag">Online Ordering</div></div>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+<h2 class="fade-in">Transparent Pricing. No Hidden Fees.</h2>
+<div class="price-grid">
+<div class="price-card fade-in">
+<div class="tier">Starter</div>
+<div class="price">S$2,888</div>
+<div class="maint">+ S$888/yr maintenance</div>
+<ul><li>5-page website</li><li>AI chatbot</li><li>Basic SEO</li><li>Mobile responsive</li></ul>
+</div>
+<div class="price-card popular fade-in">
+<div class="popular-badge">⭐ Most Popular</div>
+<div class="tier">Growth</div>
+<div class="price gradient-text">S$5,888</div>
+<div class="maint">+ S$1,288/yr maintenance</div>
+<ul><li>10-page website</li><li>AI chatbot</li><li>Advanced SEO</li><li>Booking system</li><li>Analytics dashboard</li><li>Content starter pack</li></ul>
+</div>
+<div class="price-card fade-in">
+<div class="tier">Enterprise</div>
+<div class="price">S$12,888+</div>
+<div class="maint">+ S$1,888/yr maintenance</div>
+<ul><li>Unlimited pages</li><li>Custom AI agents</li><li>Integrations</li><li>Dedicated support</li><li>Priority delivery</li></ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="eis">
+<div class="container">
+<h2 class="fade-in">The Singapore Tax Hack Most SMEs Don't Know About</h2>
+<div class="eis-math fade-in">
+<div class="eis-row"><span>Growth plan cost</span><span class="val">S$5,888</span></div>
+<div class="eis-row"><span>EIS 400% deduction</span><span class="val">S$23,552</span></div>
+<div class="eis-row"><span>Tax savings (17% CIT)</span><span class="val">S$4,004</span></div>
+<div class="eis-row"><span>Effective cost</span><span class="val" style="color:var(--green);font-size:1.3rem">S$1,884</span></div>
+</div>
+<div class="eis-result fade-in">
+<p style="color:var(--muted);margin-bottom:.5rem">Your AI website could cost less than</p>
+<div class="big">S$2,000</div>
+</div>
+<p class="eis-note fade-in">Enterprise Innovation Scheme (EIS) — Budget 2026. Valid until YA 2028.</p>
+<p class="urgency fade-in">Spend in 2026 or 2027 to qualify. Clock is ticking.</p>
+</div>
+</section>
+
+<section id="founder">
+<div class="container">
+<h2 class="fade-in">From the Octagon to AI</h2>
+<div class="founder-grid fade-in">
+<div class="founder-photo">Isaac Yap</div>
+<div class="founder-bio">
+<p>Professional MMA referee with <strong>500+ bouts</strong> across ONE Championship, Rebel FC, and MIMMA. Muay Thai instructor turned tech entrepreneur.</p>
+<p style="margin-top:.75rem">Now building AI solutions that give Singapore SMEs the digital edge they deserve.</p>
+<blockquote>"I spent years reading people in the cage. Now I read what businesses actually need."</blockquote>
+<div class="badges">
+<span class="tag">ONE Championship</span>
+<span class="tag">500+ Bouts</span>
+<span class="tag">AI Certified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container fade-in">
+<h2>Ready to See What AI Can Do for Your Business?</h2>
+<div class="contact-links">
+<a href="mailto:isaac@ionicx.ai">📧 isaac@ionicx.ai</a>
+<a href="https://ionicx.ai">🌐 ionicx.ai</a>
+<a href="https://wa.me/60123456789">📱 WhatsApp</a>
+</div>
+<a href="https://ionicx.ai" class="cta">Visit ionicx.ai →</a>
+<p class="copy">© 2026 IonicX AI. Singapore.</p>
+</div>
+</section>
+
+<script>
+const o=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.15});
+document.querySelectorAll('.fade-in').forEach(el=>o.observe(el));
+</script>
+</body>
+</html>
