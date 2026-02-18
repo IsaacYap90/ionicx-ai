@@ -30,7 +30,7 @@ export default function AboutPage() {
           <div className="glass rounded-2xl p-8 md:p-12 mb-12 glow-cyan">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#00d4ff]/30">
-                <Image src="/images/isaac-host.webp" alt="Isaac Yap - Founder & CEO, IonicX AI" width={96} height={96} className="w-full h-full object-cover" />
+                <Image src="/images/isaac-host.webp" alt="Isaac Yap - Founder & CEO, IonicX AI" width={96} height={96} className="w-full h-full object-cover object-top" />
               </div>
               <div>
                 <h2 className="text-2xl font-bold mb-2">{t("about.founder.name")}</h2>
