@@ -5,6 +5,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 
+function LangToggle() {
+  const { lang, setLang } = useLanguage();
+  return (
+    <button
+      onClick={() => setLang(lang === "en" ? "zh" : "en")}
+      className="px-3 py-1.5 rounded-full glass text-xs font-semibold tracking-wide transition-colors hover:border-[#00d4ff]/50"
+      aria-label="Toggle language"
+    >
+      <span className={lang === "en" ? "text-[#00d4ff]" : "text-[var(--text-dim)]"}>EN</span>
+      <span className="text-[var(--text-dim)] mx-1">|</span>
+      <span className={lang === "zh" ? "text-[#00d4ff]" : "text-[var(--text-dim)]"}>中文</span>
+    </button>
+  );
+}
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
@@ -37,6 +52,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <LangToggle />
           <a
             href="https://wa.me/6580268821"
             target="_blank"
@@ -47,6 +63,7 @@ export default function Navbar() {
           </a>
         </div>
         <div className="flex lg:hidden items-center gap-3">
+          <LangToggle />
           <button className="text-[#00d4ff] text-2xl" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>
             {open ? "✕" : "☰"}
           </button>
