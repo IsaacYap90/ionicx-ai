@@ -36,12 +36,13 @@ body{background:#0a0a0a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFo
 .av-oracle{background:linear-gradient(135deg,#2d1b4e,#6a5acd);color:#bf7fff;border:2px solid #9370db}
 .av-robin{background:linear-gradient(135deg,#0d2e1b,#1a6b4a);color:#00ff88;border:2px solid #00ff88}
 .av-redhood{background:linear-gradient(135deg,#2e0d0d,#8b0000);color:#ff4444;border:2px solid #dc3545}
+.av-batgirl{background:linear-gradient(135deg,#2e1a0d,#b8860b);color:#ffd700;border:2px solid #daa520}
 
 .badge-human{background:rgba(255,215,0,.15);color:#ffd700;border:1px solid rgba(255,215,0,.3)}
 .badge-ai{background:rgba(0,212,255,.15);color:#00d4ff;border:1px solid rgba(0,212,255,.3)}
 
 /* Agent row */
-.agents{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:20px;position:relative}
+.agents{display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem;margin-top:20px;position:relative}
 .agents::before{content:'';position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:2px;height:20px;background:#00d4ff44}
 .agents::after{content:'';position:absolute;top:-20px;height:2px;background:#00d4ff33;left:calc(12.5% + 70px);right:calc(12.5% + 70px)}
 
@@ -123,11 +124,21 @@ body{background:#0a0a0a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFo
 <div class="badge badge-ai">🤖 Sonnet 4.6</div>
 </div>
 </div>
+
+<div class="agent-wrap">
+<div class="agent-connector"></div>
+<div class="card">
+<div class="avatar av-batgirl">BG</div>
+<div class="name">Batgirl</div>
+<div class="role">Ops & Automation</div>
+<div class="badge badge-ai">🤖 Sonnet 4.6</div>
+</div>
+</div>
 </div>
 </div>
 
 <div class="footer">
-<p>1 Human · 5 AI Agents · Powered by OpenClaw + Anthropic Claude</p>
+<p>1 Human · 6 AI Agents · Powered by OpenClaw + Anthropic Claude</p>
 <p style="margin-top:.25rem">© 2026 IonicX AI</p>
 </div>
 
