@@ -12,27 +12,50 @@ const fmt = (n: number) => "S$" + n.toLocaleString("en-SG", { minimumFractionDig
 const plans = [
   {
     price: 2888, maintenance: 888,
-    features: ["AI-Powered Website", "AI Chatbot Integration", "Mobile Responsive", "Hosting & SSL", "SEO Optimisation", "Email Support"],
+    features: [
+      "AI-Powered Website",
+      "AI Chatbot Integration",
+      "Mobile Responsive",
+      "AI Lead Qualification Script Pack",
+      "WhatsApp Quick Replies Setup",
+      "Monthly Performance Snapshot",
+      "Quarterly Conversion Tune-Up",
+    ],
     popular: false,
   },
   {
     price: 5888, maintenance: 1288,
-    features: ["Everything in Starter", "CRM Integration", "AI Analytics Dashboard", "AI-Powered Features", "Priority Support", "Priority Delivery"],
+    features: [
+      "Everything in Starter",
+      "Two-Channel Automation",
+      "Lead Scoring & Routing Rules",
+      "No-Show Reminder Flow",
+      "Quarterly AI Workflow Optimization Call",
+      "Priority Support",
+    ],
     popular: true,
   },
   {
     price: 12888, suffix: "+", maintenance: 1888,
-    features: ["Everything in Growth", "Full AI Suite", "Custom Integrations", "API Integrations", "Dedicated Support", "Dedicated Account Manager"],
+    features: [
+      "Everything in Growth",
+      "Internal AI Copilot Pilot",
+      "SOP/Knowledge Assistant (RAG-lite)",
+      "Priority SLA",
+      "Monthly Strategy Review",
+      "Dedicated Account Manager",
+    ],
     popular: false,
   },
 ];
 
 const addons = [
-  { key: "extraPages", price: 500 },
-  { key: "ecommerce", price: 1500 },
-  { key: "multiLang", price: 800 },
-  { key: "analytics", price: 1200 },
-  { key: "booking", price: 1000 },
+  { key: "opsCareStarter", price: 588 },
+  { key: "opsCareGrowth", price: 888 },
+  { key: "opsCareEnterprise", price: 1288 },
+  { key: "internalAISprint", price: 4800 },
+  { key: "whatsappSalesEngine", price: 1500 },
+  { key: "seoGeoRetainer", price: 900 },
 ];
 
 export default function PricingPage() {
@@ -103,7 +126,7 @@ export default function PricingPage() {
               <p className="text-[var(--text-dim)] mb-6">{t("pricing.bundle.desc")}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {addons.filter((_, ai) => {
-                  if (selectedPlan === 0) return ai < 3;
+                  if (selectedPlan === 0) return ai <= 3;
                   if (selectedPlan === 1) return ai >= 1 && ai <= 4;
                   return ai >= 2;
                 }).map((addon) => (
@@ -115,6 +138,21 @@ export default function PricingPage() {
               </div>
             </motion.div>
           )}
+
+          {/* Upsell Ladder */}
+          <div className="glass rounded-2xl p-8 mb-16">
+            <h3 className="text-2xl font-bold mb-2 text-center">{t("pricing.upsell.title")}</h3>
+            <p className="text-[var(--text-dim)] text-center mb-6">{t("pricing.upsell.desc")}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {["opsCare", "internalSprint", "whatsappEngine", "seoGeo"].map((k) => (
+                <div key={k} className="glass rounded-xl p-5 border border-[var(--card-border)]/60">
+                  <div className="text-[#00d4ff] font-bold mb-1">{t(`pricing.upsell.${k}.name`)}</div>
+                  <div className="text-sm text-[var(--text-dim)] mb-2">{t(`pricing.upsell.${k}.desc`)}</div>
+                  <div className="text-sm text-[#00ff88]">{t(`pricing.upsell.${k}.price`)}</div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Comparison Table */}
           <div className="glass rounded-2xl p-8 mb-16 overflow-x-auto">
