@@ -4,7 +4,6 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ChatEmbed from "./ChatEmbed";
-import WhatsAppButton from "./WhatsAppButton";
 import CookieConsent from "./CookieConsent";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
@@ -14,7 +13,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
-        <WhatsAppButton />
         <ChatEmbed />
         <CookieConsent />
       </main>
