@@ -40,9 +40,11 @@ const businessTypes = [
 ];
 
 export default function ContactPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [leadScore, setLeadScore] = useState<LeadScore>(null);
+  const [instantConsultation, setInstantConsultation] = useState<string>("");
+  const [isGeneratingConsultation, setIsGeneratingConsultation] = useState(false);
 
   return (
     <>
@@ -56,19 +58,38 @@ export default function ContactPage() {
 
           {submitted ? (
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
-              className="glass rounded-2xl p-12 text-center glow-green">
-              <div className="text-5xl mb-4">✅</div>
-              <h2 className="text-2xl font-bold mb-2">{t("contact.thankYou")}</h2>
-              <p className="text-[var(--text-dim)] mb-4">{t("contact.thankYouDesc")}</p>
-              {leadScore && (
-                <div className={`inline-block px-4 py-2 rounded-full text-sm font-bold ${
-                  leadScore === "hot" ? "bg-red-500/20 text-red-400" :
-                  leadScore === "warm" ? "bg-orange-500/20 text-orange-400" :
-                  "bg-blue-500/20 text-blue-400"
-                }`}>
-                  {t(`contact.score.${leadScore}`)}
-                </div>
-              )}
+              className="glass rounded-2xl p-8 md:p-10 glow-green space-y-5">
+              <div className="text-center">
+                <div className="text-5xl mb-4">✅</div>
+                <h2 className="text-2xl font-bold mb-2">{t("contact.thankYou")}</h2>
+                <p className="text-[var(--text-dim)] mb-4">
+                  {lang === "zh" ? "这是您的即时 AI 咨询结果：" : "Here’s your instant AI consultation result:"}
+                </p>
+                {leadScore && (
+                  <div className={`inline-block px-4 py-2 rounded-full text-sm font-bold ${
+                    leadScore === "hot" ? "bg-red-500/20 text-red-400" :
+                    leadScore === "warm" ? "bg-orange-500/20 text-orange-400" :
+                    "bg-blue-500/20 text-blue-400"
+                  }`}>
+                    {t(`contact.score.${leadScore}`)}
+                  </div>
+                )}
+              </div>
+
+              <div className="rounded-xl border border-[#00d4ff]/30 bg-[#00d4ff]/5 p-5 whitespace-pre-wrap text-sm leading-6">
+                {isGeneratingConsultation
+                  ? (lang === "zh" ? "🤖 正在生成您的 AI 咨询建议..." : "🤖 Generating your AI consultation...")
+                  : instantConsultation}
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-[var(--text-dim)]">
+                <a href="https://wa.me/6580268821" target="_blank" rel="noopener noreferrer" className="hover:text-[#00ff88] transition-colors">
+                  {lang === "zh" ? "💬 立刻 WhatsApp 继续" : "💬 Continue on WhatsApp now"}
+                </a>
+                <a href="/pricing" className="hover:text-[#00d4ff] transition-colors">
+                  {lang === "zh" ? "💰 查看价格" : "💰 View Pricing"}
+                </a>
+              </div>
             </motion.div>
           ) : (
             <form
@@ -78,14 +99,44 @@ export default function ContactPage() {
                 const data = Object.fromEntries(fd.entries()) as Record<string, string>;
                 const { score } = scoreLeadFn(data);
                 setLeadScore(score);
+                setSubmitted(true);
+                setIsGeneratingConsultation(true);
+
+                const businessLabel = data.businessType ? t(`contact.bizType.${data.businessType}`) : "SME";
+                const userPrompt = lang === "zh"
+                  ? `请基于以下潜在客户信息，生成一份“即时 AI 咨询建议”。\n\n客户资料：\n- 行业：${businessLabel}\n- 月营收：${data.revenue || "未提供"}\n- 网站状态：${data.websiteStatus || "未提供"}\n- 时间线：${data.timeline || "未提供"}\n- 预算：${data.budget || "未提供"}\n- 备注：${data.message || "无"}\n\n请输出：\n1) 推荐套餐（Starter/Growth/Enterprise）+ 原因\n2) 预计 EIS 后有效成本\n3) 2-3 个马上可落地的自动化/AI 功能\n4) 预计上线时间\n5) 下一步行动（非常简短）\n\n语气专业、简洁、可执行。`
+                  : `Based on this lead profile, generate an "instant AI consultation".\n\nLead profile:\n- Industry: ${businessLabel}\n- Monthly revenue: ${data.revenue || "not provided"}\n- Website status: ${data.websiteStatus || "not provided"}\n- Timeline: ${data.timeline || "not provided"}\n- Budget: ${data.budget || "not provided"}\n- Notes: ${data.message || "none"}\n\nOutput exactly:\n1) Recommended package (Starter/Growth/Enterprise) + reason\n2) Estimated effective cost after EIS\n3) 2-3 immediate AI/automation features to implement\n4) Estimated go-live timeline\n5) Next best action (very short)\n\nTone: concise, practical, business-focused.`;
+
+                let aiReply = lang === "zh"
+                  ? "感谢提交。我们建议先做 15 分钟诊断通话，我会按您的预算和时间线给出可执行上线方案。"
+                  : "Thanks for submitting. We recommend a 15-minute diagnostic call next so we can lock your package, timeline, and launch plan.";
+
+                try {
+                  const chatRes = await fetch("/api/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      lang,
+                      messages: [{ role: "user", content: userPrompt }],
+                    }),
+                  });
+
+                  if (chatRes.ok) {
+                    const payload = await chatRes.json();
+                    if (payload?.reply) aiReply = payload.reply;
+                  }
+                } catch {}
+
+                setInstantConsultation(aiReply);
+                setIsGeneratingConsultation(false);
+
                 try {
                   await fetch("/api/contact", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ ...data, leadScore: score }),
+                    body: JSON.stringify({ ...data, leadScore: score, recommendation: aiReply, source: "contact" }),
                   });
                 } catch {}
-                setSubmitted(true);
               }}
               className="glass rounded-2xl p-8 md:p-12 glow-cyan space-y-6"
             >
