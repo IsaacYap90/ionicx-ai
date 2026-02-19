@@ -40,7 +40,7 @@ function SocialProof() {
   const { t } = useLanguage();
   const stats = [
     { value: "🤖", label: t("social.projects").replace("Projects Delivered", "AI-Powered Solutions") === t("social.projects") ? "AI-Powered Solutions" : t("social.projects") },
-    { value: "5", label: t("social.industries") },
+    { value: "10", label: t("social.industries") },
     { value: "400%", label: t("social.eis") },
     { value: "24/7", label: t("social.support") },
   ];

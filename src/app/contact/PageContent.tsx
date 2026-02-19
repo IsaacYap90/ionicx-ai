@@ -86,9 +86,6 @@ export default function ContactPage() {
                 <a href="https://wa.me/6580268821" target="_blank" rel="noopener noreferrer" className="hover:text-[#00ff88] transition-colors">
                   {lang === "zh" ? "💬 立刻 WhatsApp 继续" : "💬 Continue on WhatsApp now"}
                 </a>
-                <a href="/pricing" className="hover:text-[#00d4ff] transition-colors">
-                  {lang === "zh" ? "💰 查看价格" : "💰 View Pricing"}
-                </a>
               </div>
             </motion.div>
           ) : (
@@ -224,7 +221,7 @@ export default function ContactPage() {
 
               <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--text-dim)]">
                 <a href="https://wa.me/6580268821" target="_blank" rel="noopener noreferrer" className="hover:text-[#00ff88] transition-colors">{t("contact.whatsapp")}</a>
-                <span>{t("contact.email")}</span>
+                <a href="mailto:hello@ionicx.ai" className="hover:text-[#00d4ff] transition-colors">{t("contact.email")}</a>
               </div>
             </form>
           )}
