@@ -24,7 +24,7 @@ function Hero() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://wa.me/6580268821" target="_blank" rel="noopener noreferrer"
             className="inline-block px-8 py-4 rounded-full bg-[#25D366] text-white font-bold text-lg hover:shadow-[0_0_30px_rgba(37,211,102,0.4)] transition-all hover:scale-105">
-            💬 {t("nav.whatsapp")}
+            {t("nav.whatsapp")}
           </a>
           <Link href="/contact" className="inline-block px-8 py-4 rounded-full glass border border-[#00d4ff]/30 text-[#00d4ff] font-bold text-lg hover:bg-[#00d4ff]/10 transition-all">
             {t("hero.cta")}
@@ -39,9 +39,9 @@ function Hero() {
 function SocialProof() {
   const { t } = useLanguage();
   const stats = [
-    { value: "🤖", label: t("social.projects").replace("Projects Delivered", "AI-Powered Solutions") === t("social.projects") ? "AI-Powered Solutions" : t("social.projects") },
+    { value: "10", label: t("social.projects") },
     { value: "10", label: t("social.industries") },
-    { value: "400%", label: t("social.eis") },
+    { value: "400%", label: t("social.eis"), href: "/pricing#eis" },
     { value: "24/7", label: t("social.support") },
   ];
   return (
@@ -50,8 +50,17 @@ function SocialProof() {
         {stats.map((s, i) => (
           <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
             className="glass rounded-2xl p-6 text-center">
-            <div className="text-3xl font-bold text-[#00d4ff] mb-1">{s.value}</div>
-            <div className="text-sm text-[var(--text-dim)]">{s.label}</div>
+            {s.href ? (
+              <Link href={s.href}>
+                <div className="text-3xl font-bold text-[#00d4ff] mb-1">{s.value}</div>
+                <div className="text-sm text-[var(--text-dim)] hover:text-[#00d4ff] transition-colors">{s.label}</div>
+              </Link>
+            ) : (
+              <>
+                <div className="text-3xl font-bold text-[#00d4ff] mb-1">{s.value}</div>
+                <div className="text-sm text-[var(--text-dim)]">{s.label}</div>
+              </>
+            )}
           </motion.div>
         ))}
       </div>
@@ -90,7 +99,7 @@ function HowItWorks() {
 const previewCases = [
   { icon: "🧘", url: "https://fabthestretchlad.vercel.app", index: 1 },
   { icon: "🎨", url: "https://tattbylyds.vercel.app", index: 2 },
-  { icon: "🧁", url: "https://baker-demo.vercel.app", index: 0 },
+  { icon: "🧁", url: "https://baker-demo.vercel.app", index: 0, isDemo: true },
 ];
 
 function CaseStudiesPreview() {
@@ -105,7 +114,12 @@ function CaseStudiesPreview() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {previewCases.map((cs) => (
             <motion.div key={cs.index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              className="glass rounded-2xl p-6 hover:border-[#00d4ff]/30 transition-colors group">
+              className="glass rounded-2xl p-6 hover:border-[#00d4ff]/30 transition-colors group relative">
+              {cs.isDemo && (
+                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-[#FFD700]/20 text-[#FFD700] text-xs font-bold">
+                  {t("cases.demoProject")}
+                </span>
+              )}
               <span className="text-4xl block mb-4">{cs.icon}</span>
               <h3 className="text-lg font-bold mb-2 group-hover:text-[#00d4ff] transition-colors">{t(`cases.${cs.index}.name`)}</h3>
               <p className="text-sm text-[var(--text-dim)] mb-4">{t(`cases.${cs.index}.desc`)}</p>
@@ -133,34 +147,64 @@ function CaseStudiesPreview() {
   );
 }
 
-/* ─── Testimonials + CTA ─── */
-function TestimonialsAndCTA() {
+/* ─── Results + CTA (replaces fake testimonials) ─── */
+function ResultsAndCTA() {
   const { t } = useLanguage();
-  const testimonials = [0, 1, 2];
+  const results = [
+    { value: "10", label: t("results.delivered"), icon: "🚀" },
+    { value: "2-3", label: t("results.buildTime"), icon: "⚡" },
+    { value: "100%", label: t("results.satisfaction"), icon: "🎯" },
+    { value: "68%", label: t("results.eisSavings"), icon: "💰" },
+  ];
+
   return (
     <Section className="py-24">
       <div className="max-w-6xl mx-auto">
+        {/* Results Section */}
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          {t("testimonials.title")} <span className="text-[#00d4ff]">{t("testimonials.titleHighlight")}</span>
+          {t("results.title")} <span className="text-[#00d4ff]">{t("results.titleHighlight")}</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {testimonials.map((i) => (
+        <p className="text-center text-[var(--text-dim)] mb-12 max-w-xl mx-auto">{t("results.desc")}</p>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          {results.map((r, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className="glass rounded-2xl p-8">
-              <div className="text-[#00d4ff] text-2xl mb-4">★★★★★</div>
-              <p className="text-[var(--text-dim)] mb-6 italic">&ldquo;{t(`testimonials.${i}.text`)}&rdquo;</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#00d4ff]/20 flex items-center justify-center text-[#00d4ff] font-bold">
-                  {t(`testimonials.${i}.name`).charAt(0)}
-                </div>
-                <div>
-                  <div className="font-semibold text-sm">{t(`testimonials.${i}.name`)}</div>
-                  <div className="text-xs text-[var(--text-dim)]">{t(`testimonials.${i}.role`)}</div>
-                </div>
-              </div>
+              className="glass rounded-2xl p-6 text-center">
+              <div className="text-3xl mb-2">{r.icon}</div>
+              <div className="text-2xl md:text-3xl font-bold text-[#00ff88] mb-1">{r.value}</div>
+              <div className="text-sm text-[var(--text-dim)]">{r.label}</div>
             </motion.div>
           ))}
         </div>
+
+        {/* Featured Projects Mini-Showcase */}
+        <div className="glass rounded-2xl p-8 mb-16">
+          <h3 className="text-xl font-bold text-center mb-6">{t("results.featured")}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { name: "Fab The Stretch Lad", industry: t("results.project.0.industry"), url: "https://fabthestretchlad.vercel.app", features: t("results.project.0.features") },
+              { name: "TattByLyds", industry: t("results.project.1.industry"), url: "https://tattbylyds.vercel.app", features: t("results.project.1.features") },
+            ].map((project, i) => (
+              <motion.a key={i} href={project.url} target="_blank" rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
+                className="glass rounded-xl p-6 hover:border-[#00d4ff]/30 transition-all group block">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-[#00d4ff]/20 flex items-center justify-center text-[#00d4ff] font-bold text-lg">
+                    {project.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="font-semibold group-hover:text-[#00d4ff] transition-colors">{project.name}</div>
+                    <div className="text-xs text-[var(--text-dim)]">{project.industry}</div>
+                  </div>
+                </div>
+                <p className="text-sm text-[var(--text-dim)]">{project.features}</p>
+                <div className="text-[#00d4ff] text-sm font-semibold mt-3">{t("cases.viewProject")} →</div>
+              </motion.a>
+            ))}
+          </div>
+          <p className="text-center text-xs text-[var(--text-dim)] mt-6 italic">{t("results.testimonialsComing")}</p>
+        </div>
+
         {/* CTA */}
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -170,7 +214,7 @@ function TestimonialsAndCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://wa.me/6580268821" target="_blank" rel="noopener noreferrer"
               className="px-8 py-4 rounded-full bg-[#25D366] text-white font-bold text-lg hover:shadow-[0_0_30px_rgba(37,211,102,0.4)] transition-all hover:scale-105">
-              💬 {t("nav.whatsapp")}
+              {t("nav.whatsapp")}
             </a>
             <Link href="/contact" className="px-8 py-4 rounded-full glass border border-[#00d4ff]/30 text-[#00d4ff] font-bold text-lg hover:bg-[#00d4ff]/10 transition-all">
               {t("cta.consultation")}
@@ -190,7 +234,7 @@ export default function Home() {
       <SocialProof />
       <HowItWorks />
       <CaseStudiesPreview />
-      <TestimonialsAndCTA />
+      <ResultsAndCTA />
     </>
   );
 }

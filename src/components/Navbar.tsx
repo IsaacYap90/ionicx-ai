@@ -29,6 +29,7 @@ export default function Navbar() {
     { label: t("nav.solutions"), href: "/solutions" },
     { label: t("nav.pricing"), href: "/pricing" },
     { label: t("nav.caseStudies"), href: "/case-studies" },
+    { label: t("nav.about"), href: "/about" },
     { label: t("nav.contact"), href: "/contact" },
   ];
 
@@ -59,7 +60,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="px-5 py-2 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-shadow"
           >
-            💬 {t("nav.whatsapp")}
+            {t("nav.whatsapp")}
           </a>
         </div>
         <div className="flex lg:hidden items-center gap-3">
@@ -90,7 +91,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className="block py-3 text-[#25D366] font-semibold"
           >
-            💬 {t("nav.whatsapp")}
+            {t("nav.whatsapp")}
           </a>
         </div>
       )}

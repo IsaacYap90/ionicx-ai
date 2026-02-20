@@ -6,7 +6,7 @@ const SYSTEM_PROMPT = `You are Robin, IonicX AI's AI sales agent on ionicx.ai. Y
 About IonicX AI:
 - We build Personal AI Agents for Singapore SMEs
 - Services: AI-powered websites, chatbots, automation, CRM integration, analytics
-- Pricing: Starter S$2,888, Growth S$5,888, Enterprise S$12,888+
+- Pricing: Starter S$2,888, Growth S$5,888, Enterprise S$8,888+
 - Annual maintenance: S$888, S$1,288, S$1,888 respectively
 - All plans qualify for 400% EIS tax deduction (Budget 2026)
 - EIS savings: 68% effective discount (400% deduction × 17% corporate tax rate)
@@ -31,7 +31,7 @@ PORTFOLIO - 10 Demo Sites (share links when relevant):
 TIER RECOMMENDATIONS:
 - Simple business (bakery, small shop, freelancer): Starter S$2,888 → S$924 after EIS
 - Growing business (restaurant, clinic, studio): Growth S$5,888 → S$1,888 after EIS
-- Complex needs (real estate, wedding, enterprise): Enterprise S$12,888+ → S$4,125+ after EIS
+- Complex needs (real estate, wedding, enterprise): Enterprise S$8,888+ → S$2,844+ after EIS
 
 Your job:
 1. Greet warmly, ask what kind of business they have

@@ -26,6 +26,13 @@ export default function AboutPage() {
           </h1>
           <p className="text-center text-[var(--text-dim)] mb-16 text-lg max-w-2xl mx-auto">{t("about.page.desc")}</p>
 
+          {/* Company Story */}
+          <div className="glass rounded-2xl p-8 md:p-12 mb-12">
+            <h2 className="text-2xl font-bold mb-4 text-[#00d4ff]">{t("about.story.title")}</h2>
+            <p className="text-[var(--text-dim)] leading-relaxed mb-4">{t("about.story.p1")}</p>
+            <p className="text-[var(--text-dim)] leading-relaxed">{t("about.story.p2")}</p>
+          </div>
+
           {/* Founder Story */}
           <div className="glass rounded-2xl p-8 md:p-12 mb-12 glow-cyan">
             <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -40,6 +47,12 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Mission Statement */}
+          <div className="glass rounded-2xl p-8 md:p-12 mb-12 glow-green">
+            <h2 className="text-2xl font-bold mb-4 text-center">{t("about.mission.title")}</h2>
+            <p className="text-center text-lg text-[var(--text-dim)] leading-relaxed max-w-2xl mx-auto">{t("about.mission.statement")}</p>
+          </div>
+
           {/* Mission & Values */}
           <h2 className="text-2xl font-bold text-center mb-8">{t("about.values.title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -51,6 +64,25 @@ export default function AboutPage() {
                 <p className="text-sm text-[var(--text-dim)]">{t(`about.values.${v.key}.desc`)}</p>
               </motion.div>
             ))}
+          </div>
+
+          {/* Registration Details */}
+          <div className="glass rounded-2xl p-8 mb-12">
+            <h3 className="text-lg font-bold mb-4 text-center text-[#00d4ff]">{t("about.registration.title")}</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+              <div>
+                <div className="text-sm text-[var(--text-dim)]">{t("about.registration.uen")}</div>
+                <div className="font-semibold">53518824B</div>
+              </div>
+              <div>
+                <div className="text-sm text-[var(--text-dim)]">{t("about.registration.location")}</div>
+                <div className="font-semibold">Singapore</div>
+              </div>
+              <div>
+                <div className="text-sm text-[var(--text-dim)]">{t("about.registration.status")}</div>
+                <div className="font-semibold">{t("about.registration.acra")}</div>
+              </div>
+            </div>
           </div>
 
           {/* Badges */}

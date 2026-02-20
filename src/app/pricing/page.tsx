@@ -43,7 +43,7 @@ export default function PricingPage() {
       {
         "@type": "Offer",
         name: "Enterprise",
-        price: "12888",
+        price: "8888",
         priceCurrency: "SGD",
         description: "Everything in Growth plus Full AI Suite, Custom Integrations, API Integrations, Dedicated Account Manager",
         url: "https://ionicx.ai/pricing",

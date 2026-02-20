@@ -41,9 +41,15 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "IonicX AI",
               "url": "https://ionicx.ai",
+              "logo": "https://ionicx.ai/opengraph-image",
               "description": "AI solutions company in Singapore providing AI-powered websites, chatbots, and automation for SMEs.",
               "address": { "@type": "PostalAddress", "addressLocality": "Singapore", "addressCountry": "SG" },
               "areaServed": { "@type": "Country", "name": "Singapore" },
+              "sameAs": [
+                "https://linkedin.com/company/ionicx-ai",
+                "https://instagram.com/ionicx.ai",
+                "https://wa.me/6580268821"
+              ],
               "knowsAbout": ["Artificial Intelligence", "Web Development", "Chatbots", "Business Automation"],
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
@@ -54,6 +60,32 @@ export default function RootLayout({
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Process Automation" } }
                 ]
               }
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "IonicX AI",
+              "url": "https://ionicx.ai",
+              "telephone": "+6580268821",
+              "email": "hello@ionicx.ai",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Singapore",
+                "addressCountry": "SG"
+              },
+              "taxID": "53518824B",
+              "description": "Personal AI Agents for Singapore SMEs. AI-powered websites, chatbots, and automation.",
+              "priceRange": "S$2,888 - S$8,888+",
+              "image": "https://ionicx.ai/opengraph-image",
+              "sameAs": [
+                "https://linkedin.com/company/ionicx-ai",
+                "https://instagram.com/ionicx.ai"
+              ]
             }),
           }}
         />
