@@ -36,7 +36,7 @@ const plans = [
     popular: true,
   },
   {
-    price: 12888, suffix: "+", maintenance: 1888,
+    price: 8888, suffix: "+", maintenance: 1888,
     features: [
       "Everything in Growth",
       "Internal AI Copilot Pilot",
@@ -57,10 +57,20 @@ const addons = [
   { key: "booking", price: 1000 },
 ];
 
+const faqs = [
+  "timeline",
+  "eisHow",
+  "maintenance",
+  "changes",
+  "hosting",
+  "refund",
+];
+
 export default function PricingPage() {
   const { t } = useLanguage();
   const [selectedPlan, setSelectedPlan] = useState<number | null>(null);
   const [investment, setInvestment] = useState(2888);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const deduction = investment * 4;
   const savings = Math.round(deduction * 0.17);
   const effective = investment - savings;
@@ -120,7 +130,7 @@ export default function PricingPage() {
           {selectedPlan !== null && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass rounded-2xl p-8 mb-16 glow-cyan">
               <h3 className="text-xl font-bold mb-4 text-[#00d4ff]">
-                🤖 {t("pricing.bundle.title").replace("{plan}", t(`pricing.plan.${selectedPlan}.name`))}
+                {t("pricing.bundle.title").replace("{plan}", t(`pricing.plan.${selectedPlan}.name`))}
               </h3>
               <p className="text-[var(--text-dim)] mb-6">{t("pricing.bundle.desc")}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -163,8 +173,39 @@ export default function PricingPage() {
             </table>
           </div>
 
+          {/* EIS Explanation Section */}
+          <div id="eis" className="glass rounded-2xl p-8 md:p-12 mb-16 glow-green">
+            <h3 className="text-2xl font-bold text-center mb-4">
+              {t("pricing.eis.title")} <span className="text-[#00ff88]">{t("pricing.eis.titleHighlight")}</span>
+            </h3>
+            <p className="text-center text-[var(--text-dim)] mb-8 max-w-2xl mx-auto">{t("pricing.eis.desc")}</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="glass rounded-xl p-6 text-center">
+                <div className="text-3xl font-bold text-[#00d4ff] mb-2">400%</div>
+                <div className="text-sm text-[var(--text-dim)]">{t("pricing.eis.deduction")}</div>
+              </div>
+              <div className="glass rounded-xl p-6 text-center">
+                <div className="text-3xl font-bold text-[#00ff88] mb-2">68%</div>
+                <div className="text-sm text-[var(--text-dim)]">{t("pricing.eis.discount")}</div>
+              </div>
+              <div className="glass rounded-xl p-6 text-center">
+                <div className="text-3xl font-bold text-[#00d4ff] mb-2">{fmt(5888)}</div>
+                <div className="text-sm text-[var(--text-dim)]">{t("pricing.eis.example")}</div>
+              </div>
+            </div>
+            <div className="glass rounded-xl p-6 mb-6">
+              <h4 className="font-bold mb-3 text-[#00d4ff]">{t("pricing.eis.howItWorks")}</h4>
+              <div className="space-y-2 text-sm text-[var(--text-dim)]">
+                <p>{t("pricing.eis.step1")}</p>
+                <p>{t("pricing.eis.step2")}</p>
+                <p>{t("pricing.eis.step3")}</p>
+              </div>
+            </div>
+            <p className="text-xs text-[var(--text-dim)] text-center italic">{t("pricing.eis.disclaimer")}</p>
+          </div>
+
           {/* EIS Calculator */}
-          <div className="glass rounded-2xl p-8 md:p-12 glow-cyan">
+          <div className="glass rounded-2xl p-8 md:p-12 mb-16 glow-cyan">
             <h3 className="text-2xl font-bold text-center mb-4">
               {t("calc.title")} <span className="text-[#00d4ff]">{t("calc.titleHighlight")}</span>
             </h3>
@@ -190,6 +231,29 @@ export default function PricingPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="glass rounded-2xl p-8 md:p-12">
+            <h3 className="text-2xl font-bold text-center mb-8">{t("pricing.faq.title")}</h3>
+            <div className="max-w-3xl mx-auto space-y-4">
+              {faqs.map((faq, i) => (
+                <div key={faq} className="glass rounded-xl overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-sm hover:text-[#00d4ff] transition-colors"
+                  >
+                    {t(`pricing.faq.${faq}.q`)}
+                    <span className={`text-[#00d4ff] transition-transform ${openFaq === i ? "rotate-180" : ""}`}>▼</span>
+                  </button>
+                  {openFaq === i && (
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="px-6 pb-4">
+                      <p className="text-sm text-[var(--text-dim)]">{t(`pricing.faq.${faq}.a`)}</p>
+                    </motion.div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
