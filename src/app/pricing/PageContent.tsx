@@ -91,7 +91,7 @@ export default function PricingPage() {
     <>
       <Breadcrumbs />
       <Section className="py-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
             {t("pricing.page.title")} <span className="text-[#00d4ff]">{t("pricing.page.titleHighlight")}</span>
           </h1>
@@ -103,7 +103,7 @@ export default function PricingPage() {
           </div>
 
           {/* Plan Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-16">
             {plans.map((p, i) => {
               const sv = Math.round(p.price * 4 * 0.17);
               const eff = p.price - sv;
