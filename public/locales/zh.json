@@ -567,5 +567,6 @@
   "pricing.features.Internal AI Copilot (Unlimited)": "内部AI副驾驶（无限）",
   "pricing.features.SOP/Knowledge Assistant (RAG)": "SOP/知识助手（完整RAG）",
   "pricing.features.Weekly Strategy Review": "每周策略审查",
-  "pricing.features.White-Label Option": "白标选项"
+  "pricing.features.White-Label Option": "白标选项",
+  "pricing.eis.effectiveCost": "EIS后您的实际成本"
 }

@@ -581,5 +581,6 @@
   "pricing.features.Internal AI Copilot (Unlimited)": "Internal AI Copilot (Unlimited)",
   "pricing.features.SOP/Knowledge Assistant (RAG)": "SOP/Knowledge Assistant (Full RAG)",
   "pricing.features.Weekly Strategy Review": "Weekly Strategy Review",
-  "pricing.features.White-Label Option": "White-Label Option"
+  "pricing.features.White-Label Option": "White-Label Option",
+  "pricing.eis.effectiveCost": "Your effective cost after EIS"
 }

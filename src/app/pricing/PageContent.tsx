@@ -208,6 +208,10 @@ export default function PricingPage() {
                 <div className="text-3xl font-bold text-[#00d4ff] mb-2">{fmt(5888)}</div>
                 <div className="text-sm text-[var(--text-dim)]">{t("pricing.eis.example")}</div>
               </div>
+              <div className="glass rounded-xl p-6 text-center">
+                <div className="text-3xl font-bold text-[#00ff88] mb-2">{fmt(1884)}</div>
+                <div className="text-sm text-[var(--text-dim)]">{t("pricing.eis.effectiveCost")}</div>
+              </div>
             </div>
             <div className="glass rounded-xl p-6 mb-6">
               <h4 className="font-bold mb-3 text-[#00d4ff]">{t("pricing.eis.howItWorks")}</h4>
