@@ -171,6 +171,7 @@ export default function PricingPage() {
                   <th className="text-center py-3 px-4 text-[#00d4ff]">{t("pricing.plan.0.name")}</th>
                   <th className="text-center py-3 px-4 text-[#00d4ff]">{t("pricing.plan.1.name")}</th>
                   <th className="text-center py-3 px-4 text-[#00d4ff]">{t("pricing.plan.2.name")}</th>
+                  <th className="text-center py-3 px-4 text-[#00d4ff]">{t("pricing.plan.3.name")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -179,6 +180,7 @@ export default function PricingPage() {
                     <td className="py-3 px-4 text-[var(--text-dim)]">{t(`pricing.compare.row.${ri}`)}</td>
                     <td className="py-3 px-4 text-center">{t(`pricing.compare.s.${ri}`)}</td>
                     <td className="py-3 px-4 text-center">{t(`pricing.compare.g.${ri}`)}</td>
+                    <td className="py-3 px-4 text-center">{t(`pricing.compare.sc.${ri}`)}</td>
                     <td className="py-3 px-4 text-center">{t(`pricing.compare.e.${ri}`)}</td>
                   </tr>
                 ))}

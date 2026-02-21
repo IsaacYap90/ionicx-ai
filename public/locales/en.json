@@ -568,5 +568,14 @@
   "pricing.features.Bi-Weekly Strategy Calls": "Bi-Weekly Strategy Calls",
   "pricing.features.Priority SLA + Escalation": "Priority SLA + Escalation",
   "pricing.features.Everything in Scale": "Everything in Scale",
-  "pricing.features.Custom API Integrations": "Custom API Integrations"
+  "pricing.features.Custom API Integrations": "Custom API Integrations",
+  "pricing.compare.sc.0": "✅",
+  "pricing.compare.sc.1": "✅",
+  "pricing.compare.sc.2": "✅",
+  "pricing.compare.sc.3": "✅",
+  "pricing.compare.sc.4": "✅",
+  "pricing.compare.sc.5": "✅",
+  "pricing.compare.sc.6": "✅",
+  "pricing.compare.sc.7": "Bi-Weekly",
+  "pricing.compare.sc.8": "Priority"
 }
