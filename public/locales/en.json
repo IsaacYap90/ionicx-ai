@@ -165,8 +165,8 @@
   "pricing.compare.e.4": "✓",
   "pricing.compare.e.5": "✓",
   "pricing.compare.e.6": "✓",
-  "pricing.compare.e.7": "✓",
-  "pricing.compare.e.8": "✓",
+  "pricing.compare.e.7": "Weekly",
+  "pricing.compare.e.8": "Dedicated",
   "pricing.upsell.title": "Upsell Growth Ladder",
   "pricing.upsell.desc": "Add recurring revenue services and internal AI products after launch.",
   "pricing.upsell.opsCare.name": "AI Ops Care Plan",
@@ -572,10 +572,14 @@
   "pricing.compare.sc.0": "✓",
   "pricing.compare.sc.1": "✓",
   "pricing.compare.sc.2": "✓",
-  "pricing.compare.sc.3": "Advanced",
+  "pricing.compare.sc.3": "Premium",
   "pricing.compare.sc.4": "✓",
   "pricing.compare.sc.5": "✓",
   "pricing.compare.sc.6": "✓",
   "pricing.compare.sc.7": "Bi-Weekly",
-  "pricing.compare.sc.8": "Priority"
+  "pricing.compare.sc.8": "✓",
+  "pricing.features.Internal AI Copilot (Unlimited)": "Internal AI Copilot (Unlimited)",
+  "pricing.features.SOP/Knowledge Assistant (RAG)": "SOP/Knowledge Assistant (Full RAG)",
+  "pricing.features.Weekly Strategy Review": "Weekly Strategy Review",
+  "pricing.features.White-Label Option": "White-Label Option"
 }

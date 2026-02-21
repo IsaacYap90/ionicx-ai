@@ -165,8 +165,8 @@
   "pricing.compare.e.4": "✓",
   "pricing.compare.e.5": "✓",
   "pricing.compare.e.6": "✓",
-  "pricing.compare.e.7": "✓",
-  "pricing.compare.e.8": "✓",
+  "pricing.compare.e.7": "每周",
+  "pricing.compare.e.8": "专属",
   "testimonials.title": "客户",
   "testimonials.titleHighlight": "好评",
   "testimonials.aiSummary": "AI 生成的客户反馈摘要",
@@ -563,5 +563,9 @@
   "pricing.compare.sc.5": "✓",
   "pricing.compare.sc.6": "✓",
   "pricing.compare.sc.7": "每两周",
-  "pricing.compare.sc.8": "优先"
+  "pricing.compare.sc.8": "✓",
+  "pricing.features.Internal AI Copilot (Unlimited)": "内部AI副驾驶（无限）",
+  "pricing.features.SOP/Knowledge Assistant (RAG)": "SOP/知识助手（完整RAG）",
+  "pricing.features.Weekly Strategy Review": "每周策略审查",
+  "pricing.features.White-Label Option": "白标选项"
 }

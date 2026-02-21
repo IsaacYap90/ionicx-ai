@@ -51,11 +51,12 @@ const plans = [
     price: 15888, suffix: "+", maintenance: 2388,
     features: [
       "Everything in Scale",
-      "Internal AI Copilot Pilot",
-      "SOP/Knowledge Assistant (RAG-lite)",
-      "Monthly Strategy Review",
+      "Internal AI Copilot (Unlimited)",
+      "SOP/Knowledge Assistant (RAG)",
+      "Weekly Strategy Review",
       "Dedicated Account Manager",
       "Custom API Integrations",
+      "White-Label Option",
     ],
     popular: false,
   },
@@ -103,7 +104,7 @@ export default function PricingPage() {
           </div>
 
           {/* Plan Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-16">
             {plans.map((p, i) => {
               const sv = Math.round(p.price * 4 * 0.17);
               const eff = p.price - sv;
