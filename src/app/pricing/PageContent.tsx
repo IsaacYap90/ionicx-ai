@@ -103,7 +103,7 @@ export default function PricingPage() {
           </div>
 
           {/* Plan Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {plans.map((p, i) => {
               const sv = Math.round(p.price * 4 * 0.17);
               const eff = p.price - sv;
@@ -194,7 +194,7 @@ export default function PricingPage() {
               {t("pricing.eis.title")} <span className="text-[#00ff88]">{t("pricing.eis.titleHighlight")}</span>
             </h3>
             <p className="text-center text-[var(--text-dim)] mb-8 max-w-2xl mx-auto">{t("pricing.eis.desc")}</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="glass rounded-xl p-6 text-center">
                 <div className="text-3xl font-bold text-[#00d4ff] mb-2">400%</div>
                 <div className="text-sm text-[var(--text-dim)]">{t("pricing.eis.deduction")}</div>
