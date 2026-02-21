@@ -86,7 +86,7 @@
   "pricing.popular": "最受欢迎",
   "pricing.plan.0.name": "入门版",
   "pricing.plan.1.name": "成长版",
-  "pricing.plan.2.name": "企业版",
+  "pricing.plan.2.name": "扩展版",
   "pricing.maintenance": "/年 维护费",
   "pricing.includes": "包含 AI、托管、技术支持及 SEO 优化",
   "pricing.afterEIS": "EIS 扣除后：约 {amount} 实际建设成本",
@@ -546,5 +546,13 @@
   "pricing.guarantee.points.2": "✅ 持续AI功能升级包含在您的计划中",
   "pricing.monthly.label": "或每月仅",
   "pricing.monthly.suffix": "/月（EIS后）",
-  "pricing.monthly.note": "可选12个月分期付款"
+  "pricing.monthly.note": "可选12个月分期付款",
+  "pricing.plan.3.name": "企业版",
+  "pricing.features.Advanced Analytics Dashboard": "高级数据分析仪表板",
+  "pricing.features.Multi-Location Support": "多地点支持",
+  "pricing.features.Custom AI Workflow Builder": "自定义AI工作流构建器",
+  "pricing.features.Bi-Weekly Strategy Calls": "每两周策略通话",
+  "pricing.features.Priority SLA + Escalation": "优先SLA + 升级",
+  "pricing.features.Everything in Scale": "包含扩展版所有功能",
+  "pricing.features.Custom API Integrations": "自定义API集成"
 }

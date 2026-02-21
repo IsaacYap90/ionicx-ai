@@ -86,7 +86,7 @@
   "pricing.popular": "MOST POPULAR",
   "pricing.plan.0.name": "Starter",
   "pricing.plan.1.name": "Growth",
-  "pricing.plan.2.name": "Enterprise",
+  "pricing.plan.2.name": "Scale",
   "pricing.maintenance": "/yr maintenance",
   "pricing.includes": "Includes AI, hosting, support & SEO",
   "pricing.afterEIS": "After EIS: ~{amount} effective build cost",
@@ -560,5 +560,13 @@
   "pricing.guarantee.points.2": "✅ Continuous AI upgrades included with your plan",
   "pricing.monthly.label": "Or from",
   "pricing.monthly.suffix": "/mo after EIS",
-  "pricing.monthly.note": "12-month instalment available"
+  "pricing.monthly.note": "12-month instalment available",
+  "pricing.plan.3.name": "Enterprise",
+  "pricing.features.Advanced Analytics Dashboard": "Advanced Analytics Dashboard",
+  "pricing.features.Multi-Location Support": "Multi-Location Support",
+  "pricing.features.Custom AI Workflow Builder": "Custom AI Workflow Builder",
+  "pricing.features.Bi-Weekly Strategy Calls": "Bi-Weekly Strategy Calls",
+  "pricing.features.Priority SLA + Escalation": "Priority SLA + Escalation",
+  "pricing.features.Everything in Scale": "Everything in Scale",
+  "pricing.features.Custom API Integrations": "Custom API Integrations"
 }

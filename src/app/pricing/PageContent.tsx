@@ -36,14 +36,26 @@ const plans = [
     popular: true,
   },
   {
-    price: 12888, suffix: "+", maintenance: 1888,
+    price: 8888, maintenance: 1588,
     features: [
       "Everything in Growth",
+      "Advanced Analytics Dashboard",
+      "Multi-Location Support",
+      "Custom AI Workflow Builder",
+      "Bi-Weekly Strategy Calls",
+      "Priority SLA + Escalation",
+    ],
+    popular: false,
+  },
+  {
+    price: 15888, suffix: "+", maintenance: 2388,
+    features: [
+      "Everything in Scale",
       "Internal AI Copilot Pilot",
       "SOP/Knowledge Assistant (RAG-lite)",
-      "Priority SLA",
       "Monthly Strategy Review",
       "Dedicated Account Manager",
+      "Custom API Integrations",
     ],
     popular: false,
   },

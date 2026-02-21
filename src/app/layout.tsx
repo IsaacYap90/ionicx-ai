@@ -80,7 +80,7 @@ export default function RootLayout({
               },
               "taxID": "53518824B",
               "description": "Personal AI Agents for Singapore SMEs. AI-powered websites, chatbots, and automation.",
-              "priceRange": "S$2,888 - S$8,888+",
+              "priceRange": "S$2,888 - S$15,888+",
               "image": "https://ionicx.ai/opengraph-image",
               "sameAs": [
                 "https://linkedin.com/company/ionicx-ai",
