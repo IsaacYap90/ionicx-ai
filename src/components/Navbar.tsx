@@ -34,7 +34,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[#0b1020]/95 backdrop-blur-xl shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
+    <nav className="fixed top-[36px] left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[#0b1020]/95 backdrop-blur-xl shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <Link href="/" className="text-2xl font-bold font-[family-name:'Space_Grotesk'] relative z-10 cursor-pointer py-2 pr-4" onClick={() => setOpen(false)}>
           IonicX<span className="text-[#00d4ff]"> AI</span>
