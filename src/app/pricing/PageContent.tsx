@@ -106,7 +106,8 @@ export default function PricingPage() {
                   <div className="text-3xl font-bold text-[#00d4ff] mb-1">{fmt(p.price)}{p.suffix || ""}</div>
                   <div className="text-sm text-[var(--text-dim)] mb-1">+ {fmt(p.maintenance)}{t("pricing.maintenance")}</div>
                   <div className="text-xs text-[var(--text-dim)] mb-1 opacity-70">{t("pricing.includes")}</div>
-                  <div className="text-sm text-[#00ff88] mb-6">{t("pricing.afterEIS").replace("{amount}", fmt(eff))}</div>
+                  <div className="text-sm text-[#00ff88] mb-1">{t("pricing.afterEIS").replace("{amount}", fmt(eff))}</div>
+                  <div className="text-xs text-[#00d4ff] mb-6">{t("pricing.monthly.label")} {fmt(Math.round(eff / 12))}{t("pricing.monthly.suffix")}</div>
                   <ul className="space-y-3 mb-8">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-start gap-2 text-sm text-[var(--text-dim)]">
@@ -204,8 +205,22 @@ export default function PricingPage() {
             <p className="text-xs text-[var(--text-dim)] text-center italic">{t("pricing.eis.disclaimer")}</p>
           </div>
 
+
+          {/* Guarantee */}
+          <div className="glass rounded-2xl p-8 md:p-12 mb-16 text-center glow-cyan">
+            <h3 className="text-2xl font-bold mb-4">
+              {t("pricing.guarantee.title")} <span className="text-[#00ff88]">{t("pricing.guarantee.titleHighlight")}</span>
+            </h3>
+            <p className="text-[var(--text-dim)] mb-6 max-w-2xl mx-auto">{t("pricing.guarantee.desc")}</p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+              {[0,1,2].map((i) => (
+                <span key={i} className="text-sm text-white/80">{t(`pricing.guarantee.points.${i}`)}</span>
+              ))}
+            </div>
+          </div>
+
           {/* EIS Calculator */}
-          <div className="glass rounded-2xl p-8 md:p-12 mb-16 glow-cyan">
+          <div id="eis-calculator" className="glass rounded-2xl p-8 md:p-12 mb-16 glow-cyan">
             <h3 className="text-2xl font-bold text-center mb-4">
               {t("calc.title")} <span className="text-[#00d4ff]">{t("calc.titleHighlight")}</span>
             </h3>

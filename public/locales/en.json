@@ -549,5 +549,16 @@
   "solutions.compare.4.crm": "—",
   "solutions.compare.4.dedicatedSupport": "—",
   "solutions.notSure.title": "Not sure which solution?",
-  "solutions.notSure.desc": "Book a free 15-min call and we'll recommend the right AI solution for your business. No commitment, no pressure."
+  "solutions.notSure.desc": "Book a free 15-min call and we'll recommend the right AI solution for your business. No commitment, no pressure.",
+  "banner.eis": "Get your AI website from S$924 after 400% EIS tax deduction",
+  "banner.eisCta": "Calculate savings",
+  "pricing.guarantee.title": "90-Day Optimization",
+  "pricing.guarantee.titleHighlight": "Guarantee",
+  "pricing.guarantee.desc": "We actively monitor and tune your AI system for 90 days post-launch. Not seeing improvements? We keep optimizing at no extra cost until you do.",
+  "pricing.guarantee.points.0": "✅ 50% deposit to begin, 50% before launch",
+  "pricing.guarantee.points.1": "✅ 90 days of active monitoring & tuning included",
+  "pricing.guarantee.points.2": "✅ Continuous AI upgrades included with your plan",
+  "pricing.monthly.label": "Or from",
+  "pricing.monthly.suffix": "/mo after EIS",
+  "pricing.monthly.note": "12-month instalment available"
 }

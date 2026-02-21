@@ -535,5 +535,16 @@
   "solutions.compare.4.crm": "—",
   "solutions.compare.4.dedicatedSupport": "—",
   "solutions.notSure.title": "不确定选哪个方案？",
-  "solutions.notSure.desc": "预约15分钟免费通话，我们会为您推荐最适合的 AI 解决方案。无承诺，无压力。"
+  "solutions.notSure.desc": "预约15分钟免费通话，我们会为您推荐最适合的 AI 解决方案。无承诺，无压力。",
+  "banner.eis": "通过400% EIS税务减免，您的AI网站最低仅需 S$924",
+  "banner.eisCta": "计算节省金额",
+  "pricing.guarantee.title": "90天优化",
+  "pricing.guarantee.titleHighlight": "保证",
+  "pricing.guarantee.desc": "上线后90天内，我们主动监控和调优您的AI系统。没看到改善？我们继续优化，不额外收费。",
+  "pricing.guarantee.points.0": "✅ 确认后付50%，上线前付50%",
+  "pricing.guarantee.points.1": "✅ 含90天主动监控与调优",
+  "pricing.guarantee.points.2": "✅ 持续AI功能升级包含在您的计划中",
+  "pricing.monthly.label": "或每月仅",
+  "pricing.monthly.suffix": "/月（EIS后）",
+  "pricing.monthly.note": "可选12个月分期付款"
 }
