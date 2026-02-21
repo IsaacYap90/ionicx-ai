@@ -36,7 +36,7 @@ const plans = [
     popular: true,
   },
   {
-    price: 8888, suffix: "+", maintenance: 1888,
+    price: 12888, suffix: "+", maintenance: 1888,
     features: [
       "Everything in Growth",
       "Internal AI Copilot Pilot",
