@@ -176,7 +176,7 @@ export default function PricingPage() {
                 </tr>
               </thead>
               <tbody>
-                {[0,1,2,3,4,5,6,7,8].map((ri) => (
+                {[0,1,2,3,4,5,6,7,8,9,10,11,12,13].map((ri) => (
                   <tr key={ri} className="border-b border-[var(--card-border)]/50">
                     <td className="py-3 px-4 text-[var(--text-dim)]">{t(`pricing.compare.row.${ri}`)}</td>
                     <td className="py-3 px-4 text-center">{t(`pricing.compare.s.${ri}`)}</td>
